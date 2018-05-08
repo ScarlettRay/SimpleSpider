@@ -53,7 +53,7 @@ SimpleSpider类对象中设置了一个线程池，线程数为3，所以用户�
 * crawl(CrawlerAction action):执行爬取，同步时返回结果
 
 * crawlBundle(CrawlerAction action):多个URL时的批量爬取，返回结果的List对象
-</br>
-###LICENSE
+
+### LICENSE
 * * * * * 
 [Apache 2.0](https://github.com/ScarlettRay/SimpleSpider/blob/master/LICENSE)
