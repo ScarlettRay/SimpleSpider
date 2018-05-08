@@ -8,9 +8,6 @@ import java.util.Properties;
 
 public interface CrawlerAction<T> {
 
-    String DocumentCrawl = "documentCrawl";
-
-    String JSONCrawl = "JSONCrawl";
 
     /**
      * html文件爬取
