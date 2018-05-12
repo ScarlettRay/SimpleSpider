@@ -16,7 +16,10 @@ sample定义了两个Action类，分别爬取[列表页](https://bangumi.bilibil
   </br>      
 开始启动爬虫，和爬虫有关的API都设置在SimpleSpider类中。
 ```
-SimpleSpider.make().setHeader(SpiderConstant.DefaultHeader).crawlURL(url+pageNum,null).crawl(new bilianimeSpiderAction());
+SimpleSpider.make()
+            .setHeader(SpiderConstant.DefaultHeader)
+            .crawlURL(url+pageNum,null)
+            .crawl(new bilianimeSpiderAction());
 ```
 这段代码的功能介绍参见下面的SimpleSpider的API
 至此爬虫就开始工作了！！
@@ -27,10 +30,9 @@ SimpleSpider.make().setHeader(SpiderConstant.DefaultHeader).crawlURL(url+pageNum
 Document这类的文档继承AbstractDocumentCrawlerAction,重写DocumentCrawl(), 图片这类的文件继承AbstractByteCrawlerAction，重写FileCrawl();
 泛型T定义为重写方法的返回类型;
 </br>
-> SimpleSpider 
-```
+> #### SimpleSpider </br>
 SimpleSpider类对象中设置了一个线程池，线程数为3，所以用户进行小量的爬取时，可以不设置自定义的ThreadPool,内置的线程池不能满足时，用户可以自定义
-```
+
 
 * make():创建一个SimpleSpider对象；
 
