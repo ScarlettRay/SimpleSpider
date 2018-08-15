@@ -1,9 +1,9 @@
 package xyz.iamray.common;
 
-import com.alibaba.fastjson.JSONObject;
-import com.sun.tools.javac.util.Assert;
+import com.alibaba.fastjson.JSON;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.jsoup.nodes.Document;
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.iamray.api.CrawlerAction;
@@ -29,7 +29,7 @@ public class SimpleSpider {
 
     private Integer connectTimeout = 5000;  //链接超时时间
 
-    private Map<String,String> header = iamray.common.SpiderConstant.DefaultHeader;      //header参数合集
+    private Map<String,String> header = SpiderConstant.DefaultHeader;      //header参数合集
 
     /**
      * 用户属性，用于与外部进行交互的属性储存
@@ -79,7 +79,7 @@ public class SimpleSpider {
         /**
          * 创建线程池，单例模式
          */
-        defaultExecutorService = Executors.newFixedThreadPool(3);
+        defaultExecutorService = Executors.newFixedThreadPool(5);
     }
 
     /**
@@ -122,7 +122,7 @@ public class SimpleSpider {
         return this;
     }
 
-    public SimpleSpider myThreadPool(ThreadPoolExecutor myThreadPoolExecutor){
+    public SimpleSpider myThreadPool(ExecutorService myThreadPoolExecutor){
         cumstomizeExecutorService = myThreadPoolExecutor;
         usingExecutorService = cumstomizeExecutorService;
         return this;
@@ -187,7 +187,7 @@ public class SimpleSpider {
      * @return
      */
     public SimpleSpider crawlURL(String url, CloseableHttpClient httpClient){
-        Assert.checkNonNull(url,"url can not be null! ");
+        Assert.assertNotNull("url can not be null! ",url);
         this.url = url;
         if(httpClient != null){
             this.httpClient = httpClient;
@@ -198,7 +198,7 @@ public class SimpleSpider {
     }
 
     public SimpleSpider crawlURLS(String[] urls,CloseableHttpClient httpClient){
-        if(urls == null || urls.length == 0)Assert.error("urls is invalid");
+        if(urls == null || urls.length == 0)Assert.fail("urls is invalid");
         this.urls = urls;
         if(httpClient != null){
             this.httpClient = httpClient;
@@ -214,7 +214,7 @@ public class SimpleSpider {
      * @return
      */
     public SimpleSpider async(BlockingQueue blockingQueue){
-        Assert.checkNonNull(blockingQueue,"异步执行时的blockingDeque不允许为 null ");
+        Assert.assertNotNull("异步执行时的blockingDeque不允许为 null ",blockingQueue);
 
         this.blockingQueue = blockingQueue;
         this.asyncFlag  = true;
@@ -229,18 +229,18 @@ public class SimpleSpider {
      * @return
      */
     public <T> T crawl(CrawlerAction<T> crawlerAction){
-        Assert.checkNonNull(this.url,"url can not be null!");
+        Assert.assertNotNull("url can not be null!",this.url);
         boolean isCollection = iamray.utils.MyUtil.isArgumentsCollection(crawlerAction);
         if(this.asyncFlag){
             asyncCrawl(this.url,crawlerAction,isCollection);
         }else{
-            awaitCrawl(this.url,crawlerAction);
+            return awaitCrawl(this.url,crawlerAction);
         }
         return null;
     }
 
     public <T> List<T> crawlBundle(CrawlerAction<T> crawlerAction){
-        if(this.urls == null || this.urls.length == 0)Assert.error("urls can not be null!");
+        if(this.urls == null || this.urls.length == 0)Assert.fail("urls can not be null!");
         boolean isCollection = iamray.utils.MyUtil.isArgumentsCollection(crawlerAction);
         if(this.asyncFlag){
             for(String s:this.urls){
@@ -257,42 +257,42 @@ public class SimpleSpider {
     }
 
     private <T> T awaitCrawl(String url,CrawlerAction<T> crawlerAction){
-            Future<T> future = usingExecutorService.submit(()->{
-                //属性注入
-                crawlerAction.setProperty(this.property);
+        Future<T> future = usingExecutorService.submit(()->{
+            //属性注入
+            crawlerAction.setProperty(this.property);
 
-                if(crawlerAction instanceof AbstractDocumentCrawlerAction){
-                    logger.debug("正在爬取网页: "+url);
-                    Document document = HttpClientTool.getDocumentWithHttpClient(
-                            url,
-                            this.header,
-                            this.httpClient);
+            if(crawlerAction instanceof AbstractDocumentCrawlerAction){
+                logger.debug("正在爬取网页: "+url);
+                Document document = HttpClientTool.getDocumentWithHttpClient(
+                        url,
+                        this.header,
+                        this.httpClient);
 
-                    return  crawlerAction.documentCrawl(document,url);
-                }else if(crawlerAction instanceof AbstractJsonCrawlerAction){
-                    logger.debug("正在爬取json: "+url);
-                    JSONObject json = HttpClientTool.getJSONWithHttpClient(
-                            url,
-                            this.header,
-                            this.httpClient);
+                return  crawlerAction.documentCrawl(document,url);
+            }else if(crawlerAction instanceof AbstractJsonCrawlerAction){
+                logger.debug("正在爬取json: "+url);
+                JSON json = HttpClientTool.getJSONWithHttpClient(
+                        url,
+                        this.header,
+                        this.httpClient);
 
-                    return crawlerAction.JSONCrawl(json,url);
-                }else{
-                    logger.debug("正在爬取文件:"+url);
-                    byte[] bytes = HttpClientTool.getBytesWithHttpClient(
-                            url,
-                            this.header,
-                            this.httpClient);
-                    return crawlerAction.FileCrawl(bytes,url);
-                }
-            });
-            try {
-                return future.get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+                return crawlerAction.JSONCrawl(json,url);
+            }else{
+                logger.debug("正在爬取文件:"+url);
+                byte[] bytes = HttpClientTool.getBytesWithHttpClient(
+                        url,
+                        this.header,
+                        this.httpClient);
+                return crawlerAction.FileCrawl(bytes,url);
             }
+        });
+        try {
+            return future.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -317,7 +317,7 @@ public class SimpleSpider {
                 }
             }else if(crawlerAction instanceof AbstractJsonCrawlerAction){
                 logger.debug("正在爬取json: "+url);
-                JSONObject json = HttpClientTool.getJSONWithHttpClient(
+                JSON json = HttpClientTool.getJSONWithHttpClient(
                         url,
                         this.header,
                         this.httpClient);

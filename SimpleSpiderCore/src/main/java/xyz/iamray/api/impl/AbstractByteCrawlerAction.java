@@ -1,7 +1,7 @@
 package xyz.iamray.api.impl;
 
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import org.jsoup.nodes.Document;
 import xyz.iamray.api.AbstractCrawlerAction;
 
@@ -15,7 +15,7 @@ public abstract class AbstractByteCrawlerAction<T> extends AbstractCrawlerAction
     }
 
     @Override
-    public T JSONCrawl(JSONObject jsonObject, String url) {
+    public T JSONCrawl(JSON jsonObject, String url) {
         return null;
     }
 }

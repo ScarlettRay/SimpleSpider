@@ -5,13 +5,16 @@ package xyz.iamray.utils.http;
  */
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.http.*;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
@@ -24,11 +27,13 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HttpContext;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import xyz.iamray.common.SpiderConstant;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
@@ -36,7 +41,11 @@ import javax.net.ssl.SSLHandshakeException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
+import java.io.UnsupportedEncodingException;
+import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -56,7 +65,7 @@ public class HttpClientTool {
 
     private static CloseableHttpClient cumstomizedHttpClient = null;
 
-    static final int retryTime = 3;//重试次数
+    static final int retryTime = 5;//重试次数
 
     static final int connectionRequestTimeout = 20000;
     static final int connectTimeout = 5000;
@@ -145,6 +154,9 @@ public class HttpClientTool {
                 if (exception instanceof NoHttpResponseException) {// 如果服务器丢掉了连接，那么就重试
                     return true;
                 }
+                if(exception instanceof SocketTimeoutException){ //读取超时
+                    return true;
+                }
                 if (exception instanceof SSLHandshakeException) {// 不要重试SSL握手异常
                     return false;
                 }
@@ -230,7 +242,7 @@ public class HttpClientTool {
     /**
      * restful API
      */
-    public static JSONObject getJSONByHttpClient(String url,Map<String,String> header){
+    public static JSON getJSONByHttpClient(String url,Map<String,String> header){
         return getJSONWithHttpClient(url,header,getHttpClient());
     }
 
@@ -241,7 +253,7 @@ public class HttpClientTool {
      * @param httpClient
      * @return
      */
-    public static JSONObject getJSONWithHttpClient(String url,Map<String,String> header, CloseableHttpClient httpClient){
+    public static JSON getJSONWithHttpClient(String url,Map<String,String> header, CloseableHttpClient httpClient){
         //拼接url
         HttpGet httpGet = new HttpGet(url);
         for(Map.Entry<String,String> entry : header.entrySet()){
@@ -256,7 +268,7 @@ public class HttpClientTool {
             HttpEntity entity = respone.getEntity();
             in = entity.getContent();
 
-            return (JSONObject) JSON.parse(IOUtils.toByteArray(in));
+            return (JSON) JSON.parse(IOUtils.toByteArray(in));
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
@@ -282,6 +294,16 @@ public class HttpClientTool {
     }
 
     /**
+     * 根据URL获取document
+     * @param url
+     * @param header
+     * @return
+     */
+    public static Document postDocumentByHttpClient(String url,Map<String,String> header,Map<String,String> postBody){
+        return postDocumentWithHttpClient(url, header,postBody, getHttpClient());
+    }
+
+    /**
      * 自定义httpclient,供SimpleSpider使用
      * @param url
      * @param header
@@ -297,16 +319,64 @@ public class HttpClientTool {
         //重复
         //RequestConfig config = RequestConfig.custom().build();
         //httpGet.setConfig(config);
+        return praseResponse(httpGet,url,httpClient);
+    }
+
+    /**
+     * post请求
+     * @param url
+     * @param header
+     * @param httpClient
+     * @return
+     */
+    public static Document postDocumentWithHttpClient(String url, Map<String,String> header,Map<String,String> postBody, CloseableHttpClient httpClient){
+        //拼接url
+        HttpPost httpPost = new HttpPost(url);
+        for(Map.Entry<String,String> entry : header.entrySet()){
+            httpPost.setHeader(entry.getKey(),entry.getValue());
+        }
+        List<BasicNameValuePair> nameValuePairs = new ArrayList<>();
+        if(postBody != null){
+            for(Map.Entry<String,String> entry: postBody.entrySet()){
+                nameValuePairs.add(new BasicNameValuePair(entry.getKey(),entry.getValue()));
+            }
+        }
+        try {
+            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs, SpiderConstant.UTF8));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return praseResponse(httpPost,url,httpClient);
+
+    }
+
+    /**
+     * 抽离公共部分
+     * @param request
+     * @param url
+     * @param httpClient
+     * @return
+     */
+    private static Document praseResponse(HttpRequestBase request, String url, CloseableHttpClient httpClient){
         InputStream in = null;
-        try(CloseableHttpResponse respone = httpClient.execute(httpGet)){
+        try(CloseableHttpResponse respone = httpClient.execute(request)){
             if (respone.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-                httpGet.abort();
+                request.abort();
                 return null;
             }
             HttpEntity entity = respone.getEntity();
             in = entity.getContent();
 
-            return Jsoup.parse(in,"UTF-8",url);
+            //编码获取
+            String charsetName = SpiderConstant.UTF8;
+            if(entity.getContentType() != null){
+                String contentType = entity.getContentType().getValue();
+                if(contentType != null && contentType.indexOf("charset=") > 0){
+                    charsetName = contentType.substring(contentType.indexOf("charset=")+8);
+                }
+            }
+            //反转义
+            return Jsoup.parse(StringEscapeUtils.unescapeJava(IOUtils.toString(in,charsetName)),url);
         } catch (IOException e) {
             e.printStackTrace();
         }finally {

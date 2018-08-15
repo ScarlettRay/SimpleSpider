@@ -19,5 +19,4 @@ public abstract class AbstractCrawlerAction<T> implements CrawlerAction<T> {
 
     public void setProperty(Properties property){
         this.property = property;
-    }
-}
+    }}

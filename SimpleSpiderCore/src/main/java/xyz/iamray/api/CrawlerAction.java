@@ -1,33 +1,32 @@
 package xyz.iamray.api;
 
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import org.jsoup.nodes.Document;
 
 import java.util.Properties;
 
 public interface CrawlerAction<T> {
 
-
     /**
      * html文件爬取
      * @return
      */
-     T documentCrawl(Document document, String url);
+    T documentCrawl(Document document, String url);
 
     /**
      * restAPI数据
-     * @param jsonObject
+     * @param json
      * @return
      */
-     T JSONCrawl(JSONObject jsonObject, String url);
+    T JSONCrawl(JSON json, String url);
 
     /**
      * 文件爬取
      * @param bytes
      * @return
      */
-     T FileCrawl(byte[] bytes, String url);
+    T FileCrawl(byte[] bytes, String url);
 
     <T>T getAttr(String key, Class<T> clazz);
 
