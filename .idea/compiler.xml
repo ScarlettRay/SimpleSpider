@@ -11,8 +11,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SimpleSpiderCore" target="8" />
-      <module name="SimpleSpiderSample" target="8" />
+      <module name="SimpleSpiderCore" target="1.7" />
+      <module name="SimpleSpiderSample" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

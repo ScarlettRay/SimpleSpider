@@ -1,4 +1,4 @@
-package xyz.iamray.common;
+package xyz.iamray.core;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -6,9 +6,9 @@ import org.jsoup.nodes.Document;
 import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.iamray.api.CrawlerAction;
-import xyz.iamray.api.impl.AbstractDocumentCrawlerAction;
-import xyz.iamray.api.impl.AbstractJsonCrawlerAction;
+import xyz.iamray.action.CrawlerAction;
+import xyz.iamray.action.impl.AbstractDocumentCrawlerAction;
+import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
 import xyz.iamray.utils.http.HttpClientTool;
 
 import java.util.*;
@@ -22,36 +22,7 @@ public class SimpleSpider {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    /**
-     * requestConfig的参数
-     */
-    private Integer retryTime = 3;    //失败重试的次数
 
-    private Integer connectTimeout = 5000;  //链接超时时间
-
-    private Map<String,String> header = SpiderConstant.DefaultHeader;      //header参数合集
-
-    /**
-     * 用户属性，用于与外部进行交互的属性储存
-     */
-    private Properties property = null;
-
-
-
-    /**
-     * 默认线程池
-     */
-    private static ExecutorService defaultExecutorService;
-
-    /**
-     * 正在使用的线程池
-     */
-    private ExecutorService usingExecutorService;
-
-    /**
-     * 用户自定义的线程池
-     */
-    private ExecutorService cumstomizeExecutorService;
 
     /**
      * 待爬取的URL
@@ -75,13 +46,6 @@ public class SimpleSpider {
     private boolean asyncFlag = false;
 
 
-    static{
-        /**
-         * 创建线程池，单例模式
-         */
-        defaultExecutorService = Executors.newFixedThreadPool(5);
-    }
-
     /**
      * 创建一个例子
      * @return
@@ -89,14 +53,7 @@ public class SimpleSpider {
     public static SimpleSpider make(){
         return new SimpleSpider();
     }
-    /**
-     * 使用默认线程池
-     * @return
-     */
-    public SimpleSpider defaultThreadPool(){
-        usingExecutorService = defaultExecutorService;
-        return this;
-    }
+
 
     /**
      * 自定义线程池

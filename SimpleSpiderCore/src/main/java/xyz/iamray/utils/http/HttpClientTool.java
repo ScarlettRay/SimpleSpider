@@ -33,7 +33,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import xyz.iamray.common.SpiderConstant;
+import xyz.iamray.core.SpiderConstant;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
@@ -115,7 +115,7 @@ public class HttpClientTool {
      * 链接池初始化 这里最重要的一点理解就是. 让CloseableHttpClient 一直活在池的世界里, 但是HttpPost却一直用完就消掉.
      * 这样可以让链接一直保持着.
      * @return
-     */
+
     private static CloseableHttpClient init(final Integer retryTime,Integer connectTimeout ) {
         CloseableHttpClient newHttpclient = null;
 
@@ -188,7 +188,7 @@ public class HttpClientTool {
         newHttpclient = HttpClients.custom().setConnectionManager(cm).setDefaultRequestConfig(requestConfig).setRetryHandler(httpRequestRetryHandler).build();
         return newHttpclient;
     }
-
+     */
 
     /**
      * 获取文件字节的默认API

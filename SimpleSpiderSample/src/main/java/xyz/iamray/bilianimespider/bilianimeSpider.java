@@ -6,7 +6,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import xyz.iamray.bilianimespider.bean.Anime;
-import xyz.iamray.common.SimpleSpider;
+import xyz.iamray.core.SimpleSpider;
 
 import java.io.*;
 import java.lang.annotation.Annotation;

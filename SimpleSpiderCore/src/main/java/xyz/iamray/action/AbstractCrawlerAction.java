@@ -1,11 +1,11 @@
-package xyz.iamray.api;
+package xyz.iamray.action;
 
 import java.util.Properties;
 
 /**
  * Created by liuwenrui on 2018/4/12
  */
-public abstract class AbstractCrawlerAction<T> implements CrawlerAction<T> {
+public abstract class AbstractCrawlerAction<T1,T2> implements CrawlerAction<T1,T2> {
 
     private Properties property = null;
 

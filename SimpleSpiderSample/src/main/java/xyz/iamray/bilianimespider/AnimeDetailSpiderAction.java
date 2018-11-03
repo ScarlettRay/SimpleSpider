@@ -3,7 +3,7 @@ package xyz.iamray.bilianimespider;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.jsoup.nodes.Document;
-import xyz.iamray.api.impl.AbstractDocumentCrawlerAction;
+import xyz.iamray.action.impl.AbstractDocumentCrawlerAction;
 import xyz.iamray.bilianimespider.bean.Anime;
 
 import java.util.ArrayList;

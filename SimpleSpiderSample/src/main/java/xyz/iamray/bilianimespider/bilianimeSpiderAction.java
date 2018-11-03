@@ -2,7 +2,7 @@ package xyz.iamray.bilianimespider;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import xyz.iamray.api.impl.AbstractJsonCrawlerAction;
+import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
 import xyz.iamray.bilianimespider.bean.Anime;
 
 import java.util.ArrayList;
