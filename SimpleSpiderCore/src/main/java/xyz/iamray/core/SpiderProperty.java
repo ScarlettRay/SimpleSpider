@@ -1,5 +1,7 @@
 package xyz.iamray.core;
 
+import lombok.Data;
+
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
@@ -7,6 +9,7 @@ import java.util.concurrent.ExecutorService;
  * @author liuwenrui
  * @date 2018/11/3
  */
+@Data
 public class SpiderProperty {
 
     /**

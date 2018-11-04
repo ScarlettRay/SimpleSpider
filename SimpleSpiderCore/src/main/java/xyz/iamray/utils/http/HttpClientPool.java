@@ -38,12 +38,37 @@ public class HttpClientPool {
 
 
 
+    static final int retryTime = 3;//重试次数
+
+    static final int connectionRequestTimeout = 20000;
+    static final int connectTimeout = 5000;
+    static final int socketTimeout = 5000;
+
+    static final int maxTotal = 50;
+    static final int maxPerRoute = 10;
+
+    static final String detailHostName = "http://www.baidu.com";
+    static final int detailPort = 80;
+    static final int detailMaxPerRoute = 100;
+
+    private static RequestConfig defaultRequestConfig = null;
+    private static HttpRequestRetryHandler defaultRetryHandler = null;
+    private static PoolingHttpClientConnectionManager cm = null;
+    private static ExpiredHttpClientClearThread deomonThread = null;
+
+    static {
+        initConnectionManager();
+        defaultConfig();
+        defaultRetryHandler();
+        startDeomonThread();
+    }
+
     /**
      * 链接池初始化 这里最重要的一点理解就是. 让CloseableHttpClient 一直活在池的世界里, 但是HttpPost却一直用完就消掉.
      * 这样可以让链接一直保持着.
      * @return
      */
-    private static CloseableHttpClient init(final Integer retryTime, Integer connectTimeout) {
+    private static void initConnectionManager() {
         CloseableHttpClient newHttpclient = null;
 
         // 设置连接池
@@ -53,7 +78,7 @@ public class HttpClientPool {
         LayeredConnectionSocketFactory sslsf = SSLConnectionSocketFactory.getSocketFactory();
 
         Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory> create().register("http", plainsf).register("https", sslsf).build();
-        PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager(registry);
+        cm = new PoolingHttpClientConnectionManager(registry);
         // 将最大连接数增加
         cm.setMaxTotal(maxTotal);
         // 将每个路由基础的连接增加
@@ -64,17 +89,62 @@ public class HttpClientPool {
         HttpHost httpHost = new HttpHost(detailHostName, detailPort);
         // 将目标主机的最大连接数增加
         cm.setMaxPerRoute(new HttpRoute(httpHost), detailMaxPerRoute);
-        // cm.setMaxPerRoute(new HttpRoute(httpHost2),
-        // detailMaxPerRoute2);//可以有细化配置2
-        // cm.setMaxPerRoute(new HttpRoute(httpHost3),
-        // detailMaxPerRoute3);//可以有细化配置3
         // 细化配置结束
 
+    }
+
+    /**
+     * 守护线程，用于清理PoolingHttpClientConnectionManager中没用的链接
+     */
+    private static void startDeomonThread(){
+        deomonThread = new ExpiredHttpClientClearThread();
+        new Thread(deomonThread).start();
+    }
+
+    private static class ExpiredHttpClientClearThread implements Runnable{
+
+        private boolean running = true;
+
+        @Override
+        public void run(){
+            while(running){
+                synchronized (this){
+                    try {
+                        wait(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    cm.closeExpiredConnections();
+                }
+            }
+        }
+
+        void shutdown(){
+            synchronized (this){
+                running = false;
+                notify();
+            }
+        }
+    }
+
+    private static void defaultConfig(){
+
+        defaultRequestConfig = RequestConfig.custom()
+                .setConnectionRequestTimeout(connectionRequestTimeout)
+                .setConnectTimeout(connectTimeout)
+                .setSocketTimeout(socketTimeout).build();
+    }
+
+    private static void defaultRetryHandler(){
+        defaultRetryHandler = getRetryHandler(retryTime);
+    }
+
+    private static HttpRequestRetryHandler getRetryHandler(final int retryTime){
         // 请求重试处理
         HttpRequestRetryHandler httpRequestRetryHandler = new HttpRequestRetryHandler() {
             @Override
             public boolean retryRequest(IOException exception, int executionCount, HttpContext context) {
-                log.info(exception.getMessage()+" : 第"+ executionCount+"次重试");
+                log.info(exception.getMessage()+" : Number"+ executionCount+" retry!");
                 if (executionCount >= retryTime) {// 如果已经重试了retryTime次，就放弃
                     return false;
                 }
@@ -110,9 +180,40 @@ public class HttpClientPool {
             }
         };
 
-        // 配置请求的超时设置
-        RequestConfig requestConfig = RequestConfig.custom().setConnectionRequestTimeout(connectionRequestTimeout).setConnectTimeout(connectTimeout).setSocketTimeout(socketTimeout).build();
-        newHttpclient = HttpClients.custom().setConnectionManager(cm).setDefaultRequestConfig(requestConfig).setRetryHandler(httpRequestRetryHandler).build();
-        return newHttpclient;
+        return httpRequestRetryHandler;
     }
+
+    /**
+     * <p>Using default system configure to get CloseableHttpClient
+     * @return
+     */
+    public static CloseableHttpClient getHttpClient(){
+        // 配置请求的超时设置
+        return HttpClients.custom().setConnectionManager(cm)
+                .setDefaultRequestConfig(defaultRequestConfig)
+                .setRetryHandler(defaultRetryHandler).build();
+
+    }
+
+    public static CloseableHttpClient getHttpClientWithConfig(final int retryTime){
+        HttpRequestRetryHandler httpRequestRetryHandler = getRetryHandler(retryTime);
+        return HttpClients.custom().setConnectionManager(cm)
+                .setDefaultRequestConfig(defaultRequestConfig)
+                .setRetryHandler(httpRequestRetryHandler).build();
+    }
+
+
+    public static void restart(){
+        initConnectionManager();
+        defaultConfig();
+        defaultRetryHandler();
+        startDeomonThread();
+    }
+
+    public static void shutdown(){
+        cm.close();
+        deomonThread.shutdown();
+    }
+
+
 }

@@ -56,15 +56,15 @@ public class AbstractSpider extends SpiderProperty implements Spider{
     @Override
     public <T1, T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction) {
         Future<T2> future = usingExecutorService.submit(()->{
-            //属性注入
+            //外部属性注入
             crawlerAction.setProperty(this.property);
 
             if(crawlerAction instanceof AbstractDocumentCrawlerAction){
                 log.debug("Crawling document: "+url);
                 Document document = HttpClientTool.getDocumentWithHttpClient(
                         url,
-                        this.header,
-                        this.httpClient);
+                        this.getHeader(),
+                        this.);
 
                 return  crawlerAction.documentCrawl(document,url);
             }else if(crawlerAction instanceof AbstractJsonCrawlerAction){
