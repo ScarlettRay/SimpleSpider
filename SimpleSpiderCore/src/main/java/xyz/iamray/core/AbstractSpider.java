@@ -6,7 +6,7 @@ import org.jsoup.nodes.Document;
 import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.action.impl.AbstractDocumentCrawlerAction;
 import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
-import xyz.iamray.utils.http.HttpClientTool;
+import xyz.iamray.link.http.HttpClientTool;
 
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;

@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.action.impl.AbstractDocumentCrawlerAction;
 import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
-import xyz.iamray.utils.http.HttpClientTool;
+import xyz.iamray.link.http.HttpClientTool;
 
 import java.util.*;
 import java.util.concurrent.*;

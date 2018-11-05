@@ -1,4 +1,4 @@
-package xyz.iamray.utils.http;
+package xyz.iamray.link.http;
 
 /**
  * @author liuwenrui
