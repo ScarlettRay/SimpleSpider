@@ -12,6 +12,8 @@ import java.util.Properties;
  */
 public interface CrawlerAction<T1,T2> {
 
+    //Map<Class,CrawlerAction> ACTIONS_MAP = new HashMap<>();
+
     /**
      * Crawl action defined here
      * @param t
@@ -30,4 +32,6 @@ public interface CrawlerAction<T1,T2> {
     <T>T getAttr(String key, Class<T> clazz);
 
     void setProperty(Properties property);
+
+    //void put(Class clazz,CrawlerAction crawlerAction);
 }

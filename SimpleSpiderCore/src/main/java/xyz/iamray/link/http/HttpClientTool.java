@@ -58,7 +58,6 @@ public class HttpClientTool extends HttpClientPool{
                     charsetName = contentType.substring(contentType.indexOf("charset=")+8);
                 }
             }
-            //反转义
             return (T)parserMap.get(clazz.getName()).parse(entity,charsetName);
         } catch (IOException e) {
             e.printStackTrace();

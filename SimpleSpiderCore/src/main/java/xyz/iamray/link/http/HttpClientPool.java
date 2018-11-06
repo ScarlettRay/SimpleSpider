@@ -196,6 +196,9 @@ public class HttpClientPool {
     }
 
     public static CloseableHttpClient getHttpClientWithConfig(final int retryTime){
+        if(retryTime == HttpClientPool.retryTime){
+            return getHttpClient();
+        }
         HttpRequestRetryHandler httpRequestRetryHandler = getRetryHandler(retryTime);
         return HttpClients.custom().setConnectionManager(cm)
                 .setDefaultRequestConfig(defaultRequestConfig)

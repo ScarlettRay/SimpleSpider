@@ -1,11 +1,9 @@
 package xyz.iamray.core;
 
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.jsoup.nodes.Document;
+import org.apache.http.impl.client.CloseableHttpClient;
 import xyz.iamray.action.CrawlerAction;
-import xyz.iamray.action.impl.AbstractDocumentCrawlerAction;
-import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
+import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
 
 import java.util.Properties;
@@ -19,7 +17,7 @@ import java.util.concurrent.Future;
  * @date 2018/11/3
  */
 @Slf4j
-public class AbstractSpider extends SpiderProperty implements Spider{
+public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     /**
      * 默认线程池
@@ -35,6 +33,8 @@ public class AbstractSpider extends SpiderProperty implements Spider{
      * 用户属性，用于与外部进行交互的属性储存
      */
     private Properties property = null;
+
+    private CloseableHttpClient httpClient = null;
 
 
     static{
@@ -54,41 +54,21 @@ public class AbstractSpider extends SpiderProperty implements Spider{
     }
 
     @Override
-    public <T1, T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction) {
+    public <T1, T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
         Future<T2> future = usingExecutorService.submit(()->{
             //外部属性注入
             crawlerAction.setProperty(this.property);
-
-            if(crawlerAction instanceof AbstractDocumentCrawlerAction){
-                log.debug("Crawling document: "+url);
-                Document document = HttpClientTool.getDocumentWithHttpClient(
-                        url,
-                        this.getHeader(),
-                        this.);
-
-                return  crawlerAction.documentCrawl(document,url);
-            }else if(crawlerAction instanceof AbstractJsonCrawlerAction){
-                logger.debug("Crawling json: "+url);
-                JSON json = HttpClientTool.getJSONWithHttpClient(
-                        url,
-                        this.header,
-                        this.httpClient);
-
-                return crawlerAction.JSONCrawl(json,url);
-            }else{
-                logger.debug("Crawling file/image:"+url);
-                byte[] bytes = HttpClientTool.getBytesWithHttpClient(
-                        url,
-                        this.header,
-                        this.httpClient);
-                return crawlerAction.FileCrawl(bytes,url);
-            }
+            //FIXME
+            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
+            T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
+            log.info("Crawling "+type.getName()+" success. Dealing result with your action");
+            return crawlerAction.crawl(re,null);
         });
         try {
             return future.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return null;
@@ -98,4 +78,18 @@ public class AbstractSpider extends SpiderProperty implements Spider{
     public void asyncCrawl(String url,CrawlerAction crawlerAction) {
 
     }
+
+    public Spider setHttpClient(CloseableHttpClient httpClient){
+        this.httpClient = httpClient;
+        return this;
+    }
+
+    private CloseableHttpClient getHttpClient(){
+        if(this.httpClient == null){
+            return HttpClientTool.getHttpClientWithConfig(getRetryTime());
+        }else{
+            return this.httpClient;
+        }
+    }
+
 }

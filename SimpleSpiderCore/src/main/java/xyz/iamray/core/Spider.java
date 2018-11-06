@@ -24,4 +24,5 @@ public interface Spider {
      * @param crawlerAction
      */
     void asyncCrawl(String url,CrawlerAction crawlerAction);
+
 }

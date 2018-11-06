@@ -33,4 +33,13 @@ public class SpiderUtil {
         }
         return types;
     }
+
+    public static Class[] getClass(Class clazz){
+        Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
+        Class[] types = new Class[genericType.length];
+        for (int i = 0; i < genericType.length-1; i++) {
+            types[i] = genericType[i].getClass();
+        }
+        return types;
+    }
 }

@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dae6e87-49d9-4c2e-b7b7-1edaaf315ab4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ByteParser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/DocumentParser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/JsonParser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/Parser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java" />
       <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/MyUtil.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientPool.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientPoolProperty.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPoolProperty.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientTool.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,24 +33,24 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1194853">
+    <splitter split-orientation="horizontal" split-proportion="0.114035085">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AbstractJsonCrawlerAction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractJsonCrawlerAction.java">
+          <file leaf-file-name="HttpClientTool.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+                <state relative-caret-position="389">
+                  <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HttpClientTool.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
+          <file leaf-file-name="CrawlerAction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-256">
-                  <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+                <state relative-caret-position="270">
+                  <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -76,17 +69,27 @@
           <file leaf-file-name="ParserMap.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="528">
-                  <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+                <state relative-caret-position="-12">
+                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#812#813#0" expanded="true" />
-                    <element signature="e#857#858#0" expanded="true" />
-                    <element signature="e#895#896#0" expanded="true" />
-                    <element signature="e#932#933#0" expanded="true" />
-                    <element signature="e#984#985#0" expanded="true" />
-                    <element signature="e#1027#1028#0" expanded="true" />
+                    <element signature="e#814#815#0" expanded="true" />
+                    <element signature="e#859#860#0" expanded="true" />
+                    <element signature="e#897#898#0" expanded="true" />
+                    <element signature="e#934#935#0" expanded="true" />
+                    <element signature="e#986#987#0" expanded="true" />
+                    <element signature="e#1029#1030#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SimpleSpider.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="283">
+                  <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -119,7 +122,7 @@
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/JsonParser.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="216">
-                  <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+                  <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -128,14 +131,14 @@
           <file leaf-file-name="SpiderUtil.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+                <state relative-caret-position="163">
+                  <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="StringParser.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="StringParser.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="144">
@@ -152,21 +155,31 @@
           <file leaf-file-name="Spider.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+                <state relative-caret-position="468">
+                  <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AbstractSpider.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AbstractSpider.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="56" column="83" lean-forward="true" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+                <state relative-caret-position="1152">
+                  <caret line="64" column="47" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CrawlMes.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMes.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="126">
+                  <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -174,16 +187,34 @@
           <file leaf-file-name="HttpClientPool.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1559">
-                  <caret line="98" column="44" lean-forward="false" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
+                <state relative-caret-position="396">
+                  <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#2763#2788#0" expanded="true" />
                     <element signature="e#4534#4535#0" expanded="true" />
                     <element signature="e#4598#4599#0" expanded="true" />
-                    <element signature="e#4758#6385#0" expanded="true" />
-                    <element signature="e#6384#6385#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AbstractByteCrawlerAction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractByteCrawlerAction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="162">
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AbstractCrawlerAction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/AbstractCrawlerAction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="216">
+                  <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -201,8 +232,8 @@
           <file leaf-file-name="SpiderProperty.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+                <state relative-caret-position="288">
+                  <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -210,31 +241,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ExceptionWrapper.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ExceptionWrapper.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/pom.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-534">
+                <state relative-caret-position="126">
                   <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CrawlMesRepo.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMesRepo.java">
+          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pom.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+                <state relative-caret-position="199">
+                  <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="71" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -269,9 +290,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/iamray/api/impl/AbstractDocumentCrawlerAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iamray/api/impl/AbstractByteCrawlerAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/iamray/api/impl/AbstractJsonCrawlerAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/iamray/utils/http/HttpClientTool.java" />
         <option value="$PROJECT_DIR$/src/main/java/iamray/utils/MyUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/iamray/common/SimpleSpider.java" />
@@ -298,16 +316,13 @@
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/common/Spider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMesRepo.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/Repo.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ExceptionWrapper.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMes.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientPoolProperty.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientPool.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientTool.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parseer/Parser.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parseer/DocumentParser.java" />
@@ -316,10 +331,16 @@
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parseer/StringParser.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/DocumentParser.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/MyUtil.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ByteParser.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/Parser.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractByteCrawlerAction.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
       </list>
     </option>
   </component>
@@ -523,16 +544,19 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Template Data Languages" />
     <property name="typescript.show.imports.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/java/sample/bilianimespider" />
-      <recent name="$PROJECT_DIR$/src/xyz/iamray/api/impl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/bilianimespider" />
+      <recent name="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray" />
+      <recent name="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz" />
+      <recent name="$PROJECT_DIR$/SimpleSpiderSample/src" />
+      <recent name="$PROJECT_DIR$/SimpleSpiderCore" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="sample.bilianimespider.bean" />
@@ -540,12 +564,9 @@
       <recent name="iamray.common" />
       <recent name="main.java.iamray.api" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/bilianimespider" />
-      <recent name="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray" />
-      <recent name="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz" />
-      <recent name="$PROJECT_DIR$/SimpleSpiderSample/src" />
-      <recent name="$PROJECT_DIR$/SimpleSpiderCore" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/sample/bilianimespider" />
+      <recent name="$PROJECT_DIR$/src/xyz/iamray/api/impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -656,12 +677,12 @@
       <updated>1525619327231</updated>
       <workItem from="1525619331121" duration="21303000" />
       <workItem from="1534239073309" duration="1430000" />
-      <workItem from="1541214572930" duration="22677000" />
+      <workItem from="1541214572930" duration="26592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46058000" />
+    <option name="totallyTimeSpent" value="49973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -680,7 +701,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22103004" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25822604" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -802,17 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/AbstractCrawlerAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-          <folding>
-            <element signature="e#477#478#0" expanded="false" />
-            <element signature="e#517#518#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/Repo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -829,34 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-534">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMesRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -912,73 +898,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1559">
-          <caret line="98" column="44" lean-forward="false" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2763#2788#0" expanded="true" />
-            <element signature="e#4534#4535#0" expanded="true" />
-            <element signature="e#4598#4599#0" expanded="true" />
-            <element signature="e#4758#6385#0" expanded="true" />
-            <element signature="e#6384#6385#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.45/fastjson-1.2.45-sources.jar!/com/alibaba/fastjson/JSON.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1524">
           <caret line="67" column="33" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2045">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractByteCrawlerAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1029,26 +952,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1076,24 +983,8 @@
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/JsonParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,13 +996,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java">
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="56" column="83" lean-forward="true" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
+        <state relative-caret-position="-12">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/AbstractCrawlerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractByteCrawlerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2763#2788#0" expanded="true" />
+            <element signature="e#4534#4535#0" expanded="true" />
+            <element signature="e#4598#4599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="64" column="47" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="71" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,7 +1193,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1203,7 +1212,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.alibaba:fastjson:1.2.45</last-edited>
+          <last-edited>Maven: org.projectlombok:lombok:1.16.18</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
