@@ -5,7 +5,9 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
+import xyz.iamray.repo.CrawlMes;
 
+import java.util.Collection;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -37,6 +39,12 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     private CloseableHttpClient httpClient = null;
 
 
+    /**
+     *  store current spider`s information;
+     */
+    private CrawlMes crawlMes = null;
+
+
     static{
         /**
          * 创建线程池，单例模式
@@ -62,7 +70,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
             T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-            return crawlerAction.crawl(re,null);
+            return crawlerAction.crawl(re,this.crawlMes);
         });
         try {
             return future.get();
@@ -75,8 +83,20 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     }
 
     @Override
-    public void asyncCrawl(String url,CrawlerAction crawlerAction) {
-
+    public <T1,T2> void asyncCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
+        usingExecutorService.execute(()->{
+            //外部属性注入
+            crawlerAction.setProperty(this.property);
+            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
+            T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
+            log.info("Crawling "+type.getName()+" success. Dealing result with your action");
+            boolean isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
+            if(isCollection){
+                this.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
+            }else{
+                this.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
+            }
+        });
     }
 
     public Spider setHttpClient(CloseableHttpClient httpClient){

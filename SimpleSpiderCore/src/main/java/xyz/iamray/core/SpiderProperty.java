@@ -3,6 +3,7 @@ package xyz.iamray.core;
 import lombok.Data;
 
 import java.util.Map;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 
 /**
@@ -25,4 +26,9 @@ public class SpiderProperty {
      * 用户自定义的线程池
      */
     private ExecutorService cumstomizeExecutorService;
+
+    /**
+     * async crawl need set blockingQueue
+     */
+    private BlockingQueue blockingQueue;
 }

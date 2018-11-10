@@ -23,6 +23,6 @@ public interface Spider {
      * Asynchronous crawl
      * @param crawlerAction
      */
-    void asyncCrawl(String url,CrawlerAction crawlerAction);
+    <T1,T2> void asyncCrawl(String url,CrawlerAction<T1,T2> crawlerAction);
 
 }

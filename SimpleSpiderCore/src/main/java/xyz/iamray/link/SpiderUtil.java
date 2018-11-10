@@ -15,10 +15,10 @@ public class SpiderUtil {
      * @param object
      * @return
      */
-    public static boolean isArgumentsCollection(Object object){
+    public static boolean isArgumentsCollection(Object object,int index){
         Type[] genericType = ((ParameterizedType)object.getClass().getGenericSuperclass()).getActualTypeArguments();
         try {
-            return Collection.class.isAssignableFrom(Class.forName(genericType[0].getTypeName()));
+            return Collection.class.isAssignableFrom(Class.forName(genericType[index].getTypeName()));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
