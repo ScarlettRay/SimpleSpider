@@ -14,6 +14,8 @@ public class NormalCrawlMes implements CrawlMes{
 
     private List<ExceptionWrapper> exceptionWrapperzs= null;
 
+
+
     @Override
     public String getCurrentUrl() {
         return curUrl;
@@ -32,4 +34,5 @@ public class NormalCrawlMes implements CrawlMes{
     public List<ExceptionWrapper> getExceptions() {
         return exceptionWrapperzs;
     }
+
 }

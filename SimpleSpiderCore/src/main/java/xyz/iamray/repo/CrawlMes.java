@@ -15,4 +15,5 @@ public interface CrawlMes {
     int sizeOfExceptions();
 
     List<ExceptionWrapper> getExceptions();
+
 }

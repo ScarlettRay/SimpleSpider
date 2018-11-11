@@ -1,5 +1,6 @@
 package xyz.iamray.core;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.impl.client.CloseableHttpClient;
 import xyz.iamray.action.CrawlerAction;
@@ -9,16 +10,14 @@ import xyz.iamray.repo.CrawlMes;
 
 import java.util.Collection;
 import java.util.Properties;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /**
  * @author liuwenrui
  * @date 2018/11/3
  */
 @Slf4j
+@Data
 public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     /**
@@ -38,11 +37,17 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     private CloseableHttpClient httpClient = null;
 
+    /**
+     * async crawl need set blockingQueue
+     */
+    private BlockingQueue blockingQueue = null;
+
 
     /**
      *  store current spider`s information;
      */
     private CrawlMes crawlMes = null;
+
 
 
     static{
@@ -61,6 +66,20 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return this;
     }
 
+    /**
+     * 用户自定义线程池
+     * @param cumstomizeExecutorService
+     * @param useCustomThreadPool 是否使用自定义的线程池
+     * @return
+     */
+    public Spider customThreadPool(ExecutorService cumstomizeExecutorService,boolean useCustomThreadPool){
+        this.setCumstomizeExecutorService(cumstomizeExecutorService);
+        if(useCustomThreadPool){
+            this.usingExecutorService = cumstomizeExecutorService;
+        }
+        return this;
+    }
+
     @Override
     public <T1, T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
         Future<T2> future = usingExecutorService.submit(()->{
@@ -70,7 +89,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
             T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-            return crawlerAction.crawl(re,this.crawlMes);
+            return crawlerAction.crawl (re,this.crawlMes);
         });
         try {
             return future.get();
@@ -90,6 +109,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
             T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
+            //FIXME
             boolean isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
             if(isCollection){
                 this.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
@@ -110,6 +130,16 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         }else{
             return this.httpClient;
         }
+    }
+
+    public Spider setProperty(Properties property){
+        this.property = property;
+        return this;
+    }
+
+    public Spider setBlockingQueue(BlockingQueue blockingQueue){
+        this.blockingQueue = blockingQueue;
+        return this;
     }
 
 }
