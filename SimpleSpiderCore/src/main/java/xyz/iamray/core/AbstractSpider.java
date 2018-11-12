@@ -35,18 +35,13 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
      */
     private Properties property = null;
 
-    private CloseableHttpClient httpClient = null;
-
-    /**
-     * async crawl need set blockingQueue
-     */
-    private BlockingQueue blockingQueue = null;
-
 
     /**
      *  store current spider`s information;
      */
     private CrawlMes crawlMes = null;
+
+    private StartConfiger startConfiger = null;
 
 
 
@@ -85,9 +80,12 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         Future<T2> future = usingExecutorService.submit(()->{
             //外部属性注入
             crawlerAction.setProperty(this.property);
-            //FIXME
+            //FIXME 不要让它抛警告
             Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
-            T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
+            T1 re = HttpClientTool.get(url,
+                    this.getHeader(),
+                    this.startConfiger.getHttpClient(),
+                    type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
             return crawlerAction.crawl (re,this.crawlMes);
         });
@@ -107,30 +105,21 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             //外部属性注入
             crawlerAction.setProperty(this.property);
             Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
-            T1 re = HttpClientTool.get(url,this.getHeader(),getHttpClient(),type);
+            T1 re = HttpClientTool.get(url,
+                    this.getHeader(),
+                    this.startConfiger.getHttpClient(),
+                    type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-            //FIXME
+            //FIXME 需要每爬一次就取一次值
             boolean isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
             if(isCollection){
-                this.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
+                this.startConfiger.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
             }else{
-                this.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
+                this.startConfiger.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
             }
         });
     }
 
-    public Spider setHttpClient(CloseableHttpClient httpClient){
-        this.httpClient = httpClient;
-        return this;
-    }
-
-    private CloseableHttpClient getHttpClient(){
-        if(this.httpClient == null){
-            return HttpClientTool.getHttpClientWithConfig(getRetryTime());
-        }else{
-            return this.httpClient;
-        }
-    }
 
     public Spider setProperty(Properties property){
         this.property = property;
@@ -138,8 +127,67 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     }
 
     public Spider setBlockingQueue(BlockingQueue blockingQueue){
-        this.blockingQueue = blockingQueue;
+        this.startConfiger.blockingQueue = blockingQueue;
         return this;
     }
 
+    /**
+     * 爬虫启动前必须配置此类
+     */
+    @Data
+    private class StartConfiger{
+        private CrawlerAction crawlerAction;
+
+        private CloseableHttpClient httpClient;
+
+        private String url;
+
+        private String[] urls;
+
+        /**
+         * async crawl need set blockingQueue
+         */
+        private BlockingQueue blockingQueue;
+
+        private boolean isCollection;
+
+        public <T1,T2> void setCrawlerAction(CrawlerAction<T1,T2> crawlerAction){
+            this.crawlerAction = crawlerAction;
+            this.isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
+        }
+
+        public void setHttpClient(CloseableHttpClient httpClient){
+            if(httpClient == null){
+                this.httpClient = HttpClientTool.getHttpClientWithConfig(getRetryTime(),getConnectTimeout());
+            }else{
+                this.httpClient = httpClient;
+            }
+        }
+    }
+
+    public Spider setStarterConfiger(String[] urls,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+        this.startConfiger = new StartConfiger();
+        this.startConfiger.setUrls(urls);
+        this.startConfiger.setCrawlerAction(crawlerAction);
+        this.startConfiger.setHttpClient(httpClient);
+
+        return this;
+    }
+
+    public Spider setStarterConfiger(String[] urls,CrawlerAction crawlerAction){
+        return setStarterConfiger(urls, crawlerAction,null);
+    }
+
+    public Spider setStarterConfiger(String url,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+        this.startConfiger = new StartConfiger();
+        this.startConfiger.setUrl(url);
+        this.startConfiger.setCrawlerAction(crawlerAction);
+        this.startConfiger.setHttpClient(httpClient);
+
+        return this;
+    }
+
+    public Spider setStarterConfiger(String url,CrawlerAction crawlerAction){
+        return setStarterConfiger(url, crawlerAction,null);
+    }
 }

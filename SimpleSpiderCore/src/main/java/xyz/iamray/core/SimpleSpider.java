@@ -29,7 +29,6 @@ public class SimpleSpider extends AbstractSpider{
     }
 
 
-
     /**
      * 设置链接属性
      * @param retryTime 默认是一次

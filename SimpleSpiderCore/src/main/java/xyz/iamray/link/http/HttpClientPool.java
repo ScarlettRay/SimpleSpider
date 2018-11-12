@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author liuwenrui
@@ -55,6 +57,11 @@ public class HttpClientPool {
     private static HttpRequestRetryHandler defaultRetryHandler = null;
     private static PoolingHttpClientConnectionManager cm = null;
     private static ExpiredHttpClientClearThread deomonThread = null;
+
+    /**
+     * k:connectTimeOut;v:RequestConfig(configure with the key)
+     */
+    private static Map<Integer,RequestConfig> requestConfigMap = new HashMap<>();
 
     static {
         initConnectionManager();
@@ -133,6 +140,8 @@ public class HttpClientPool {
                 .setConnectionRequestTimeout(connectionRequestTimeout)
                 .setConnectTimeout(connectTimeout)
                 .setSocketTimeout(socketTimeout).build();
+
+        requestConfigMap.put(HttpClientPool.connectTimeout,defaultRequestConfig);
     }
 
     private static void defaultRetryHandler(){
@@ -195,13 +204,30 @@ public class HttpClientPool {
 
     }
 
-    public static CloseableHttpClient getHttpClientWithConfig(final int retryTime){
-        if(retryTime == HttpClientPool.retryTime){
+    /**
+     * 根据retryTime和connectTimeout获取HttpClient
+     * 针对connectTimeOut做一个RequestConfig的缓存
+     * @param retryTime
+     * @param connectTimeout
+     * @return
+     */
+    public static CloseableHttpClient getHttpClientWithConfig(final int retryTime,final int connectTimeout){
+        if(retryTime == HttpClientPool.retryTime && connectTimeout == HttpClientPool.connectTimeout){
             return getHttpClient();
+        }
+        RequestConfig localConfig;
+        if(requestConfigMap.containsKey(connectTimeout)){
+            localConfig = defaultRequestConfig;
+        }else{
+           localConfig = RequestConfig.custom()
+                    .setConnectionRequestTimeout(connectionRequestTimeout)
+                    .setConnectTimeout(connectTimeout)
+                    .setSocketTimeout(socketTimeout).build();
+           requestConfigMap.put(connectTimeout,localConfig);
         }
         HttpRequestRetryHandler httpRequestRetryHandler = getRetryHandler(retryTime);
         return HttpClients.custom().setConnectionManager(cm)
-                .setDefaultRequestConfig(defaultRequestConfig)
+                .setDefaultRequestConfig(localConfig)
                 .setRetryHandler(httpRequestRetryHandler).build();
     }
 
