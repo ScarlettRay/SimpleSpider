@@ -33,15 +33,15 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     /**
      * 用户属性，用于与外部进行交互的属性储存
      */
-    private Properties property = null;
+    protected Properties property = null;
 
 
     /**
      *  store current spider`s information;
      */
-    private CrawlMes crawlMes = null;
+    protected CrawlMes crawlMes = null;
 
-    private StartConfiger startConfiger = null;
+    protected StartConfiger startConfiger = null;
 
 
 
@@ -76,7 +76,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     }
 
     @Override
-    public <T1, T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
+    public <T1,T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
         Future<T2> future = usingExecutorService.submit(()->{
             //外部属性注入
             crawlerAction.setProperty(this.property);
@@ -131,11 +131,12 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return this;
     }
 
+
     /**
      * 爬虫启动前必须配置此类
      */
     @Data
-    private class StartConfiger{
+    protected class StartConfiger{
         private CrawlerAction crawlerAction;
 
         private CloseableHttpClient httpClient;
@@ -151,7 +152,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
         private boolean isCollection;
 
-        public <T1,T2> void setCrawlerAction(CrawlerAction<T1,T2> crawlerAction){
+        public void setCrawlerAction(CrawlerAction crawlerAction){
             this.crawlerAction = crawlerAction;
             this.isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
         }
@@ -163,6 +164,11 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
                 this.httpClient = httpClient;
             }
         }
+
+        public <T1,T2> CrawlerAction<T1,T2> getCrawlerAction(){
+            return this.crawlerAction;
+        }
+
     }
 
     public Spider setStarterConfiger(String[] urls,CrawlerAction crawlerAction,CloseableHttpClient httpClient){

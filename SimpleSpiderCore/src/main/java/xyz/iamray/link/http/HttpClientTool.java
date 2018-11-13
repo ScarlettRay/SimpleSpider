@@ -31,6 +31,7 @@ import java.util.Map;
  */
 public class HttpClientTool extends HttpClientPool{
 
+
     private static ParserMap parserMap = ParserMap.parserMap;
 
     /**

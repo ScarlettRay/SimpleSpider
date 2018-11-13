@@ -3,6 +3,7 @@ package xyz.iamray.core;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import xyz.iamray.action.CrawlerAction;
+import xyz.iamray.link.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ public class SimpleSpider extends AbstractSpider{
     public <T1,T2> List<T2> crawlBundle(String[] urls,CrawlerAction<T1,T2> crawlerAction){
         if(urls == null || urls.length == 0)Assert.fail("urls can not be null!");
         //boolean isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
-        if(this.getBlockingQueue() != null){
+        if(this.startConfiger.getBlockingQueue() != null){
             for(String url:urls){
                 asyncCrawl(url,crawlerAction);
             }
@@ -58,6 +59,30 @@ public class SimpleSpider extends AbstractSpider{
         }
         return null;
     }
+
+    /**
+     * Method to start spider
+     * FIXME
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T> Result<T> start(Class<T> clazz){
+        if(this.startConfiger.getUrls() != null
+                && this.startConfiger.getUrls().length > 0){
+            List<T> list = crawlBundle(this.startConfiger.getUrls(),this.startConfiger.getCrawlerAction());
+            return new Result<>(list,this.crawlMes);
+        }
+        if(this.startConfiger.getBlockingQueue() != null){
+            asyncCrawl(this.startConfiger.getUrl(),this.startConfiger.getCrawlerAction());
+            return null;
+        }else{
+           T obj = serialCrawl(this.startConfiger.getUrl(),this.startConfiger.getCrawlerAction());
+           return new Result<>(obj,this.crawlMes);
+        }
+    }
+
+
 
 
 
