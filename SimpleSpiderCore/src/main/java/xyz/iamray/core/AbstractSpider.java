@@ -14,7 +14,8 @@ import java.util.concurrent.*;
 
 /**
  * @author liuwenrui
- * @date 2018/11/3
+ * @since  2018/11/3
+ *
  */
 @Slf4j
 @Data
@@ -46,7 +47,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
 
     static{
-        /**
+        /*
          * 创建线程池，单例模式
          */
         defaultExecutorService = Executors.newFixedThreadPool(5);
@@ -63,7 +64,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     /**
      * 用户自定义线程池
-     * @param cumstomizeExecutorService
+     * @param cumstomizeExecutorService 自定义线程池
      * @param useCustomThreadPool 是否使用自定义的线程池
      * @return
      */

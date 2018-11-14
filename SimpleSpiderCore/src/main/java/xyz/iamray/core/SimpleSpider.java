@@ -63,11 +63,10 @@ public class SimpleSpider extends AbstractSpider{
     /**
      * Method to start spider
      * FIXME
-     * @param clazz
      * @param <T>
      * @return
      */
-    public <T> Result<T> start(Class<T> clazz){
+    public <T> Result<T> start(){
         if(this.startConfiger.getUrls() != null
                 && this.startConfiger.getUrls().length > 0){
             List<T> list = crawlBundle(this.startConfiger.getUrls(),this.startConfiger.getCrawlerAction());
