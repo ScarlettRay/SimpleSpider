@@ -3,6 +3,44 @@
   <component name="ChangeListManager">
     <list default="true" id="7dae6e87-49d9-4c2e-b7b7-1edaaf315ab4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/AbstractCrawlerAction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/CrawlerAction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/impl/AbstractByteCrawlerAction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/impl/AbstractDocumentCrawlerAction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/impl/AbstractJsonCrawlerAction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/AbstractSpider$StartConfiger.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/AbstractSpider.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/SimpleSpider.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/Spider.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/SpiderConstant.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/SpiderProperty.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/exception/ExceptionWrapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/Result.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/SpiderUtil.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPool$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPool$ExpiredHttpClientClearThread.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPool.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPoolProperty.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientTool.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/ByteParser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/DocumentParser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/JsonParser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/Parser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/ParserMap.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/StringParser.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/CrawlMes.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/CrawlMesRepo.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/NormalCrawlMes.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/Repo.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/SimpleSpider/AppTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/test/java/AppTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestDocumentCrawlerActio.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestInterface.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestJsonCrawlerAction.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestTowType.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +71,7 @@
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="144">
-                  <caret line="8" column="58" lean-forward="true" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+                  <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
                   <folding />
                 </state>
               </provider>
@@ -156,7 +194,7 @@
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="126">
-                  <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+                  <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
                   <folding>
                     <element signature="e#1049#1050#0" expanded="true" />
                     <element signature="e#1084#1085#0" expanded="true" />
@@ -531,7 +569,7 @@
       <workItem from="1534239073309" duration="1430000" />
       <workItem from="1541214572930" duration="36849000" />
       <workItem from="1541942833365" duration="12614000" />
-      <workItem from="1542272821651" duration="2540000" />
+      <workItem from="1542272821651" duration="2707000" />
     </task>
     <servers />
   </component>
@@ -568,7 +606,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75384000" />
+    <option name="totallyTimeSpent" value="75551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1046,7 +1084,7 @@
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="58" lean-forward="true" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+          <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1054,7 +1092,7 @@
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="16" column="41" lean-forward="true" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding>
             <element signature="e#1049#1050#0" expanded="true" />
             <element signature="e#1084#1085#0" expanded="true" />
