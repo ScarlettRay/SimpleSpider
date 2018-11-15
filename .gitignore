@@ -1,4 +1,5 @@
-*.target
+**/traget
+*.class
 
 # IDEA artifacts and output dirs
 *.iml
