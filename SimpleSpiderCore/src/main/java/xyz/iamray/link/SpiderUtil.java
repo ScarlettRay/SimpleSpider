@@ -3,6 +3,7 @@ package xyz.iamray.link;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * @author liuwenrui
@@ -11,19 +12,25 @@ import java.util.Collection;
 public class SpiderUtil {
 
     /**
-     * 获取对象的类上的泛型，并判断是否为Collection的子类
+     * 获取对象的类上的泛型，并判断是否为Collection或者是Map的子类
      * @param object
      * @return
      */
     public static boolean isArgumentsCollection(Object object,int index){
         Type[] genericType = ((ParameterizedType)object.getClass().getGenericSuperclass()).getActualTypeArguments();
         try {
-            return Collection.class.isAssignableFrom(Class.forName(genericType[index].getTypeName()));
+            String fullTypeName = genericType[index].getTypeName();
+            if(fullTypeName.contains("<")){
+                fullTypeName = fullTypeName.substring(0,fullTypeName.indexOf("<"));
+            }
+            return Collection.class.isAssignableFrom(Class.forName(fullTypeName))
+                    || Map.class.isAssignableFrom(Class.forName(fullTypeName));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         return false;
     }
+
 
     public static String[] getClassArguments(Class clazz){
         Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
