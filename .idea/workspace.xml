@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dae6e87-49d9-4c2e-b7b7-1edaaf315ab4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/AbstractCrawlerAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/CrawlerAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/impl/AbstractByteCrawlerAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/impl/AbstractDocumentCrawlerAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/action/impl/AbstractJsonCrawlerAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/AbstractSpider$StartConfiger.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/AbstractSpider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/SimpleSpider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/Spider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/SpiderConstant.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/core/SpiderProperty.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/exception/ExceptionWrapper.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/Result.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/SpiderUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPool$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPool$ExpiredHttpClientClearThread.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientPoolProperty.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/http/HttpClientTool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/ByteParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/DocumentParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/JsonParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/Parser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/ParserMap.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/link/parser/StringParser.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/CrawlMes.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/CrawlMesRepo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/NormalCrawlMes.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/xyz/iamray/repo/Repo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/SimpleSpider/AppTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/test/java/AppTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestDocumentCrawlerActio.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestInterface.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestJsonCrawlerAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest$TestTowType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/test-classes/xyz/iamray/link/SpiderUtilTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,7 +27,7 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.33937636">
+    <splitter split-orientation="horizontal" split-proportion="0.5230618">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="HttpClientTool.java" pinned="false" current-in-tab="false">
@@ -114,24 +77,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ParserMap.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#814#815#0" expanded="true" />
-                    <element signature="e#859#860#0" expanded="true" />
-                    <element signature="e#897#898#0" expanded="true" />
-                    <element signature="e#934#935#0" expanded="true" />
-                    <element signature="e#986#987#0" expanded="true" />
-                    <element signature="e#1029#1030#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="CrawlMes.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMes.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -166,11 +111,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpiderUtil.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SpiderUtil.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="207">
                   <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -245,7 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/sample/bilianimespider/bilianimeSpider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/bilianimespider/Anime.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/bilianimespider/Cell.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/bilianimespider/bean/Anime.java" />
@@ -296,6 +250,7 @@
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -569,7 +524,7 @@
       <workItem from="1534239073309" duration="1430000" />
       <workItem from="1541214572930" duration="36849000" />
       <workItem from="1541942833365" duration="12614000" />
-      <workItem from="1542272821651" duration="2707000" />
+      <workItem from="1542272821651" duration="2858000" />
     </task>
     <servers />
   </component>
@@ -606,7 +561,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75551000" />
+    <option name="totallyTimeSpent" value="75702000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,7 +578,7 @@
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3083434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -634,14 +589,14 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31330472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25751072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25755742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25755742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -701,13 +656,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3-sources.jar!/org/apache/http/impl/client/HttpClients.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3-sources.jar!/org/apache/http/impl/client/HttpClientBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -803,13 +751,13 @@
         <state relative-caret-position="18">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#814#815#0" expanded="false" />
+            <element signature="e#859#860#0" expanded="false" />
+            <element signature="e#897#898#0" expanded="false" />
+            <element signature="e#934#935#0" expanded="false" />
+            <element signature="e#986#987#0" expanded="false" />
+            <element signature="e#1029#1030#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1106,6 +1054,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding />
         </state>
       </provider>
