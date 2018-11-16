@@ -24,11 +24,17 @@ public class SpiderUtilTest {
 
     @Test
     public void getClassArguments() {
+        String[] classes = new String[]{"java.util.List<java.lang.String>","java.util.Map<java.lang.String, java.lang.String>"};
+        Assert.assertArrayEquals(classes,SpiderUtil.getClassArguments(TestTowType.class));
+
     }
 
     @Test
     public void TestgetClass() {
-
+        Class[] classes =  new Class[]{
+                List.class,Map.class
+        };
+        Assert.assertArrayEquals(classes,SpiderUtil.getClass(TestTowType.class));
     }
 
     class TestJsonCrawlerAction extends AbstractJsonCrawlerAction<List<String>>{
@@ -47,9 +53,9 @@ public class SpiderUtilTest {
         }
     }
 
-    interface TestInterface<T1,T2>{}
+    class TestInterface<T1,T2>{}
 
-    class TestTowType implements TestInterface<List<String>,Map<String,String>>{
+    class TestTowType extends TestInterface<List<String>,Map<String,String>>{
 
     }
 }

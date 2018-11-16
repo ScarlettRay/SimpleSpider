@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.link.Result;
+import xyz.iamray.repo.NormalCrawlMes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,13 @@ public class SimpleSpider extends AbstractSpider{
      * @return
      */
     public static SimpleSpider make(){
-        return new SimpleSpider();
+        return init();
+    }
+
+    private static SimpleSpider init() {
+        SimpleSpider spider = new SimpleSpider();
+        spider.crawlMes = new NormalCrawlMes();
+        return spider;
     }
 
 

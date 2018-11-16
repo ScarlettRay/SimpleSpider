@@ -12,6 +12,8 @@ public interface CrawlMes {
 
     String getCurrentUrl();
 
+    void setCurrentUrl(String currentUrl);
+
     int sizeOfExceptions();
 
     List<ExceptionWrapper> getExceptions();

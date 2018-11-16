@@ -22,6 +22,11 @@ public class NormalCrawlMes implements CrawlMes{
     }
 
     @Override
+    public void setCurrentUrl(String currentUrl) {
+        this.curUrl = currentUrl;
+    }
+
+    @Override
     public int sizeOfExceptions() {
         if(exceptionWrapperzs == null || exceptionWrapperzs.size()==0){
             return 0;

@@ -88,6 +88,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
                     this.startConfiger.getHttpClient(),
                     type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
+            crawlMes.setCurrentUrl(url);
             return crawlerAction.crawl (re,this.crawlMes);
         });
         try {
@@ -111,9 +112,8 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
                     this.startConfiger.getHttpClient(),
                     type);
             log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-            //FIXME 需要每爬一次就取一次值
-            boolean isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
-            if(isCollection){
+            this.crawlMes.setCurrentUrl(url);
+            if(this.startConfiger.isCollection){
                 this.startConfiger.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
             }else{
                 this.startConfiger.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
@@ -166,7 +166,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             }
         }
 
-        public <T1,T2> CrawlerAction<T1,T2> getCrawlerAction(){
+        public CrawlerAction getCrawlerAction(){
             return this.crawlerAction;
         }
 

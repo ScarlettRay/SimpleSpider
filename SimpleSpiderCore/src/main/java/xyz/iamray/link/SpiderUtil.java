@@ -1,5 +1,7 @@
 package xyz.iamray.link;
 
+import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
+
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Collection;
@@ -35,18 +37,19 @@ public class SpiderUtil {
     public static String[] getClassArguments(Class clazz){
         Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
         String[] types = new String[genericType.length];
-        for (int i = 0; i < genericType.length-1; i++) {
+        for (int i = 0; i < genericType.length; i++) {
             types[i] = genericType[i].getTypeName();
         }
         return types;
     }
 
-    public static Class[] getClass(Class clazz){
+    public static <T1,T2> Class[] getClass(Class clazz){
         Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
         Class[] types = new Class[genericType.length];
-        for (int i = 0; i < genericType.length-1; i++) {
-            types[i] = genericType[i].getClass();
+        for (int i = 0; i < genericType.length; i++) {
+            types[i] = ((ParameterizedTypeImpl) genericType[i]).getRawType();
         }
         return types;
     }
+
 }
