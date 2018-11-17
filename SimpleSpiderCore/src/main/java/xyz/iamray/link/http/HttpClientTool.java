@@ -15,6 +15,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import xyz.iamray.core.SpiderConstant;
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.link.parser.ParserMap;
 
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class HttpClientTool extends HttpClientPool{
     }
 
 
-    public static <T> T get(String url,Map<String,String> header,CloseableHttpClient httpClient,Class<T> clazz){
+    public static <T> T get(String url,Map<String,String> header,CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException {
         //拼接url
         HttpGet httpGet = new HttpGet(url);
         for(Map.Entry<String,String> entry : header.entrySet()){

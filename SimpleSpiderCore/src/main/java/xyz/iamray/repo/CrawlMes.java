@@ -18,4 +18,6 @@ public interface CrawlMes {
 
     List<ExceptionWrapper> getExceptions();
 
+    void addExceptionWrapper(ExceptionWrapper exceptionWrapper);
+
 }

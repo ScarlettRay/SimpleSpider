@@ -15,11 +15,11 @@ public class SpiderUtilTest {
 
     @Test
     public void isArgumentsCollection() {
-        Assert.assertTrue(SpiderUtil.isArgumentsCollection(new TestJsonCrawlerAction(),0));
-        Assert.assertFalse(SpiderUtil.isArgumentsCollection(new TestDocumentCrawlerActio(),0));
+        Assert.assertTrue(SpiderUtil.isArgumentsCollectionInSuperClass(new TestJsonCrawlerAction(),0));
+        Assert.assertFalse(SpiderUtil.isArgumentsCollectionInSuperClass(new TestDocumentCrawlerActio(),0));
 
-        Assert.assertTrue(SpiderUtil.isArgumentsCollection(new TestTowType(),0));
-        Assert.assertTrue(SpiderUtil.isArgumentsCollection(new TestTowType(),1));
+        Assert.assertTrue(SpiderUtil.isArgumentsCollectionInSuperClass(new TestTowType(),0));
+        Assert.assertTrue(SpiderUtil.isArgumentsCollectionInSuperClass(new TestTowType(),1));
     }
 
     @Test

@@ -19,10 +19,10 @@ public class ParserMap {
     private Map<String,Parser> map = new HashMap<>();
 
     private ParserMap(){
-        map.put(SpiderUtil.getClassArguments(ByteParser.class)[0],new ByteParser());
-        map.put(SpiderUtil.getClassArguments(DocumentParser.class)[0],new DocumentParser());
-        map.put(SpiderUtil.getClassArguments(JsonParser.class)[0],new JsonParser());
-        map.put(SpiderUtil.getClassArguments(StringParser.class)[0],new StringParser());
+        map.put(SpiderUtil.getClassArgumentsFromInterface(ByteParser.class)[0],new ByteParser());
+        map.put(SpiderUtil.getClassArgumentsFromInterface(DocumentParser.class)[0],new DocumentParser());
+        map.put(SpiderUtil.getClassArgumentsFromInterface(JsonParser.class)[0],new JsonParser());
+        map.put(SpiderUtil.getClassArgumentsFromInterface(StringParser.class)[0],new StringParser());
     }
 
     public boolean contains(String clazz){

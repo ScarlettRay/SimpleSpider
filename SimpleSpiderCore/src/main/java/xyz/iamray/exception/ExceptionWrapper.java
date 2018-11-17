@@ -13,6 +13,9 @@ public class ExceptionWrapper {
 
     public int StatusCode;
 
-    public ExceptionWrapper(){
+    public ExceptionWrapper(Exception e,ExceptionStatusCode statusCode){
+        this.exception = e;
+        this.StatusCode = statusCode.statusCode;
+        this.mes = statusCode.mes;
     }
 }

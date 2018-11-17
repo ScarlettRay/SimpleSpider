@@ -155,7 +155,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
         public void setCrawlerAction(CrawlerAction crawlerAction){
             this.crawlerAction = crawlerAction;
-            this.isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
+            this.isCollection = SpiderUtil.isArgumentsCollectionInSuperClass(crawlerAction,1);
         }
 
         public void setHttpClient(CloseableHttpClient httpClient){
@@ -166,9 +166,6 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             }
         }
 
-        public CrawlerAction getCrawlerAction(){
-            return this.crawlerAction;
-        }
 
     }
 

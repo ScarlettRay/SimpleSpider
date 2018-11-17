@@ -40,4 +40,9 @@ public class NormalCrawlMes implements CrawlMes{
         return exceptionWrapperzs;
     }
 
+    @Override
+    public void addExceptionWrapper(ExceptionWrapper exceptionWrapper) {
+        this.exceptionWrapperzs.add(exceptionWrapper);
+    }
+
 }

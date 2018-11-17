@@ -52,7 +52,7 @@ public class SimpleSpider extends AbstractSpider{
 
     public <T1,T2> List<T2> crawlBundle(String[] urls,CrawlerAction<T1,T2> crawlerAction){
         if(urls == null || urls.length == 0)Assert.fail("urls can not be null!");
-        //boolean isCollection = SpiderUtil.isArgumentsCollection(crawlerAction,1);
+        //boolean isCollection = SpiderUtil.isArgumentsCollectionInSuperClass(crawlerAction,1);
         if(this.startConfiger.getBlockingQueue() != null){
             for(String url:urls){
                 asyncCrawl(url,crawlerAction);
@@ -70,20 +70,21 @@ public class SimpleSpider extends AbstractSpider{
     /**
      * Method to start spider
      * FIXME
-     * @param <T>
+     * @param <T2>
      * @return
      */
-    public <T> Result<T> start(){
+    public <T1,T2> Result<T2> start(){
+        CrawlerAction<T1,T2> crawlerAction = startConfiger.getCrawlerAction();
         if(this.startConfiger.getUrls() != null
                 && this.startConfiger.getUrls().length > 0){
-            List<T> list = crawlBundle(this.startConfiger.getUrls(),this.startConfiger.getCrawlerAction());
+            List<T2> list = crawlBundle(this.startConfiger.getUrls(),crawlerAction);
             return new Result<>(list,this.crawlMes);
         }
         if(this.startConfiger.getBlockingQueue() != null){
-            asyncCrawl(this.startConfiger.getUrl(),this.startConfiger.getCrawlerAction());
+            asyncCrawl(this.startConfiger.getUrl(),crawlerAction);
             return null;
         }else{
-           T obj = serialCrawl(this.startConfiger.getUrl(),this.startConfiger.getCrawlerAction());
+           T2 obj = serialCrawl(this.startConfiger.getUrl(),crawlerAction);
            return new Result<>(obj,this.crawlMes);
         }
     }

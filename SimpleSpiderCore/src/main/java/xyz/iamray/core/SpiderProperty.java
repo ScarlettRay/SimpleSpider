@@ -1,6 +1,8 @@
 package xyz.iamray.core;
 
 import lombok.Data;
+import xyz.iamray.exception.ExceptionStrategy;
+import xyz.iamray.exception.PassAndCollectExceptionStrategy;
 
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -20,6 +22,8 @@ public class SpiderProperty {
     private Integer connectTimeout = 5000;  //链接超时时间
 
     private Map<String,String> header = SpiderConstant.DefaultHeader;      //header参数合集
+
+    private ExceptionStrategy exceptionStrategy = PassAndCollectExceptionStrategy.INSTANCE;
 
     /**
      * 用户自定义的线程池
