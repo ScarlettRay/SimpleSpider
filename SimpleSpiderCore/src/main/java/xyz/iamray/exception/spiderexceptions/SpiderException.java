@@ -6,4 +6,9 @@ package xyz.iamray.exception.spiderexceptions;
  */
 public class SpiderException extends RuntimeException{
 
+    protected String solution = null;
+
+    public SpiderException(Exception e){
+        super(e);
+    }
 }

@@ -15,6 +15,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import xyz.iamray.core.SpiderConstant;
+import xyz.iamray.exception.spiderexceptions.AddressException;
+import xyz.iamray.exception.spiderexceptions.NetWorkException;
 import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.link.parser.ParserMap;
 
@@ -41,7 +43,7 @@ public class HttpClientTool extends HttpClientPool{
      * @param httpClient
      * @return
      */
-    private static <T> T praseResponse(HttpRequestBase request, CloseableHttpClient httpClient,Class<T> clazz){
+    private static <T> T praseResponse(HttpRequestBase request, CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException{
         InputStream in = null;
         HttpEntity entity = null;
         try(CloseableHttpResponse respone = httpClient.execute(request)){
@@ -62,15 +64,16 @@ public class HttpClientTool extends HttpClientPool{
             }
             return (T)parserMap.get(clazz.getName()).parse(entity,charsetName);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new NetWorkException(e);
+        } catch (Exception e1) {
+            throw new AddressException(e1);
         }finally {
             try {
                 EntityUtils.consume(entity);
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new NetWorkException(e);
             }
         }
-        return null;
     }
 
 
@@ -80,14 +83,18 @@ public class HttpClientTool extends HttpClientPool{
         for(Map.Entry<String,String> entry : header.entrySet()){
             httpGet.setHeader(entry.getKey(),entry.getValue());
         }
-        return praseResponse(httpGet,httpClient,clazz);
+        try {
+           return praseResponse(httpGet,httpClient,clazz);
+        }catch (SpiderException se){
+            throw se;
+        }
     }
 
     public <T> T defultGet(String url,Map<String,String> header,Class<T> clazz){
         return get(url,header,getHttpClient(),clazz);
     }
 
-    public static <T> T post(String url,Map<String,String> header,Map<String,String> postBody,CloseableHttpClient httpClient,Class<T> clazz){
+    public static <T> T post(String url,Map<String,String> header,Map<String,String> postBody,CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException{
         //拼接url
         HttpPost httpPost = new HttpPost(url);
         for(Map.Entry<String,String> entry : header.entrySet()){
@@ -100,11 +107,16 @@ public class HttpClientTool extends HttpClientPool{
             }
         }
         try {
+            //FIXME 一定是utf8吗
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs, SpiderConstant.UTF8));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return praseResponse(httpPost,httpClient,clazz);
+        try{
+           return praseResponse(httpPost,httpClient,clazz);
+        }catch (SpiderException se){
+            throw se;
+        }
     }
 
     public static <T> T defaultPost(String url,Map<String,String> header,Map<String,String> postBody,Class<T> clazz){

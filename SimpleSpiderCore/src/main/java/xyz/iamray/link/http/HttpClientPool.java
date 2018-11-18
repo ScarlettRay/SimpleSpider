@@ -153,7 +153,7 @@ public class HttpClientPool {
         HttpRequestRetryHandler httpRequestRetryHandler = new HttpRequestRetryHandler() {
             @Override
             public boolean retryRequest(IOException exception, int executionCount, HttpContext context) {
-                log.info(exception.getMessage()+" : Number"+ executionCount+" retry!");
+                log.info(exception.getMessage()+" : Number "+ executionCount+" retry!");
                 if (executionCount >= retryTime) {// 如果已经重试了retryTime次，就放弃
                     return false;
                 }

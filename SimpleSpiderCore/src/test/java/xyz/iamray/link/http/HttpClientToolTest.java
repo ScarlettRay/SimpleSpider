@@ -10,9 +10,12 @@ public class HttpClientToolTest {
 
     private String url = "https://www.baidu.com/";
 
+    private String wrongUrl  = "https://www.baidus.com/";
+
     @Test
-    public void get() {
+    public void get(){
         Assert.assertNotNull(HttpClientTool.get(url, SpiderConstant.DefaultHeader,HttpClientPool.getHttpClient(), Document.class));
+        Assert.assertNull(HttpClientTool.get(wrongUrl, SpiderConstant.DefaultHeader,HttpClientPool.getHttpClient(), Document.class));
     }
 
     @Test
