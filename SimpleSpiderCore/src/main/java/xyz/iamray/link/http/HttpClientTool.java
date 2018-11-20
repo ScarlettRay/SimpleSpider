@@ -83,11 +83,7 @@ public class HttpClientTool extends HttpClientPool{
         for(Map.Entry<String,String> entry : header.entrySet()){
             httpGet.setHeader(entry.getKey(),entry.getValue());
         }
-        try {
-           return praseResponse(httpGet,httpClient,clazz);
-        }catch (SpiderException se){
-            throw se;
-        }
+        return praseResponse(httpGet,httpClient,clazz);
     }
 
     public <T> T defultGet(String url,Map<String,String> header,Class<T> clazz){
@@ -112,11 +108,8 @@ public class HttpClientTool extends HttpClientPool{
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        try{
-           return praseResponse(httpPost,httpClient,clazz);
-        }catch (SpiderException se){
-            throw se;
-        }
+        return praseResponse(httpPost,httpClient,clazz);
+
     }
 
     public static <T> T defaultPost(String url,Map<String,String> header,Map<String,String> postBody,Class<T> clazz){

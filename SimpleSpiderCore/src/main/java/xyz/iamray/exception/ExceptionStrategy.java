@@ -1,5 +1,6 @@
 package xyz.iamray.exception;
 
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.repo.CrawlMes;
 
 /**
@@ -10,5 +11,11 @@ import xyz.iamray.repo.CrawlMes;
  */
 public interface ExceptionStrategy {
 
-    void dealWithException(Exception e, ExceptionStatusCode statusCode,CrawlMes crawlMes);
+    int RETRY = 0;
+
+    int BREAKOUT = 1;
+
+    int IGNORE = 2;
+
+    int dealWithException(SpiderException e, CrawlMes crawlMes);
 }

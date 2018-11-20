@@ -1,5 +1,6 @@
 package xyz.iamray.exception;
 
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.repo.CrawlMes;
 
 /**
@@ -11,7 +12,7 @@ public class ThrowExceptionStrategy implements ExceptionStrategy{
     public static final ThrowExceptionStrategy INSTANCE = new ThrowExceptionStrategy();
 
     @Override
-    public void dealWithException(Exception e,ExceptionStatusCode statusCode, CrawlMes crawlMes) {
+    public int dealWithException(SpiderException e, CrawlMes crawlMes) {
         throw new RuntimeException(e);
     }
 }

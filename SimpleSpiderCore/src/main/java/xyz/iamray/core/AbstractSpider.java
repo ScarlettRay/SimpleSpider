@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.impl.client.CloseableHttpClient;
 import xyz.iamray.action.CrawlerAction;
+import xyz.iamray.exception.ExceptionStrategy;
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
 import xyz.iamray.repo.CrawlMes;
@@ -78,22 +80,33 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     @Override
     public <T1,T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
+        try {
         Future<T2> future = usingExecutorService.submit(()->{
             //外部属性注入
             crawlerAction.setProperty(this.property);
+            crawlMes.setCurrentUrl(url);
             //FIXME 不要让它抛警告
             Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
-            T1 re = HttpClientTool.get(url,
-                    this.getHeader(),
-                    this.startConfiger.getHttpClient(),
-                    type);
-            log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-            crawlMes.setCurrentUrl(url);
-            return crawlerAction.crawl (re,this.crawlMes);
+              T1 re = HttpClientTool.get(url,
+                        this.getHeader(),
+                        this.startConfiger.getHttpClient(),
+                        type);
+              log.info("Crawling "+type.getName()+" success. Dealing result with your action");
+              return crawlerAction.crawl(re,this.crawlMes);
         });
-        try {
             return future.get();
-        } catch (ExecutionException e) {
+        } catch (SpiderException se){
+            //FIXME 异常处理机制
+            int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
+            //对爬虫线程的后续处理
+            if(s == ExceptionStrategy.RETRY){
+
+            }else if(s == ExceptionStrategy.BREAKOUT){
+
+            }else if(s == ExceptionStrategy.IGNORE){
+
+            }
+        }catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -106,13 +119,22 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         usingExecutorService.execute(()->{
             //外部属性注入
             crawlerAction.setProperty(this.property);
-            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
-            T1 re = HttpClientTool.get(url,
-                    this.getHeader(),
-                    this.startConfiger.getHttpClient(),
-                    type);
-            log.info("Crawling "+type.getName()+" success. Dealing result with your action");
             this.crawlMes.setCurrentUrl(url);
+
+            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
+            T1 re = null;
+            try{
+                re = HttpClientTool.get(url,
+                        this.getHeader(),
+                        this.startConfiger.getHttpClient(),
+                        type);
+                log.info("Crawling "+type.getName()+" success. Dealing result with your action");
+
+            }catch (SpiderException se){
+                //FIXME 异常处理机制
+                this.getExceptionStrategy().dealWithException(se,crawlMes);
+            }
+
             if(this.startConfiger.isCollection){
                 this.startConfiger.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
             }else{

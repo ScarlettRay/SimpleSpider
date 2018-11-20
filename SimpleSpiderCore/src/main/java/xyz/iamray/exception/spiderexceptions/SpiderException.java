@@ -11,4 +11,8 @@ public class SpiderException extends RuntimeException{
     public SpiderException(Exception e){
         super(e);
     }
+
+    public String getSolution(){
+        return this.solution;
+    }
 }

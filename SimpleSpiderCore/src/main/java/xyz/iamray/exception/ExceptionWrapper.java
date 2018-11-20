@@ -1,5 +1,7 @@
 package xyz.iamray.exception;
 
+import xyz.iamray.exception.spiderexceptions.SpiderException;
+
 /**
  *
  * @author liuwenrui
@@ -7,15 +9,13 @@ package xyz.iamray.exception;
  */
 public class ExceptionWrapper {
 
-    public Exception exception;
+    public SpiderException exception;
 
-    public String mes;
+    public String url;
 
-    public int StatusCode;
-
-    public ExceptionWrapper(Exception e,ExceptionStatusCode statusCode){
+    public ExceptionWrapper(SpiderException e,String url){
         this.exception = e;
-        this.StatusCode = statusCode.statusCode;
-        this.mes = statusCode.mes;
+        this.url = url;
     }
+
 }
