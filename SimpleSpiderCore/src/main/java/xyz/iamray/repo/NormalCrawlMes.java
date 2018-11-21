@@ -14,7 +14,7 @@ public class NormalCrawlMes implements CrawlMes{
 
     private List<ExceptionWrapper> exceptionWrapperzs= null;
 
-
+    private int retryTime;
 
     @Override
     public String getCurrentUrl() {
@@ -43,6 +43,11 @@ public class NormalCrawlMes implements CrawlMes{
     @Override
     public void addExceptionWrapper(ExceptionWrapper exceptionWrapper) {
         this.exceptionWrapperzs.add(exceptionWrapper);
+    }
+
+    @Override
+    public int increamentAndGetRetryTime() {
+        return retryTime++;
     }
 
 }

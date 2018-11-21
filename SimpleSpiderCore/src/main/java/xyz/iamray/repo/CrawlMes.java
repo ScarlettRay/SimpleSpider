@@ -20,4 +20,6 @@ public interface CrawlMes {
 
     void addExceptionWrapper(ExceptionWrapper exceptionWrapper);
 
+    int increamentAndGetRetryTime();
+
 }

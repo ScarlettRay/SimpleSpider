@@ -100,11 +100,14 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
             //对爬虫线程的后续处理
             if(s == ExceptionStrategy.RETRY){
-
+                //retry in limit times
+                if(crawlMes.increamentAndGetRetryTime()<3){
+                    return serialCrawl(url,crawlerAction);
+                }
             }else if(s == ExceptionStrategy.BREAKOUT){
-
+                //do nothing;
             }else if(s == ExceptionStrategy.IGNORE){
-
+                //do nothing;
             }
         }catch (ExecutionException e) {
             e.printStackTrace();
@@ -132,7 +135,18 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
             }catch (SpiderException se){
                 //FIXME 异常处理机制
-                this.getExceptionStrategy().dealWithException(se,crawlMes);
+                int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
+                //对爬虫线程的后续处理
+                if(s == ExceptionStrategy.RETRY){
+                    //retry in limit times
+                    if(crawlMes.increamentAndGetRetryTime()<3){
+                        asyncCrawl(url,crawlerAction);
+                    }
+                }else if(s == ExceptionStrategy.BREAKOUT){
+                    //do nothing;
+                }else if(s == ExceptionStrategy.IGNORE){
+                    //do nothing;
+                }
             }
 
             if(this.startConfiger.isCollection){

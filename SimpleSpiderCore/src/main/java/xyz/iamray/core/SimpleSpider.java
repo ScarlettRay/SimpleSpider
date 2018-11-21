@@ -23,13 +23,18 @@ public class SimpleSpider extends AbstractSpider{
 
 
     /**
-     * 创建一个例子
+     * 创建
      * @return
      */
     public static SimpleSpider make(){
         return init();
     }
 
+    /**
+     * 初始化爬虫，此爬虫不能链式调用的，自行设置StartConfiger
+     * 要复用SimpleSpider，需重新设置CrawlMes
+     * @return
+     */
     private static SimpleSpider init() {
         SimpleSpider spider = new SimpleSpider();
         spider.crawlMes = new NormalCrawlMes();
