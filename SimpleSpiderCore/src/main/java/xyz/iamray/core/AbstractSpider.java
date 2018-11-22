@@ -59,7 +59,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
      * 使用默认线程池
      * @return
      */
-    public Spider defaultThreadPool(){
+    public AbstractSpider defaultThreadPool(){
         usingExecutorService = defaultExecutorService;
         return this;
     }
@@ -70,7 +70,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
      * @param useCustomThreadPool 是否使用自定义的线程池
      * @return
      */
-    public Spider customThreadPool(ExecutorService cumstomizeExecutorService,boolean useCustomThreadPool){
+    public AbstractSpider customThreadPool(ExecutorService cumstomizeExecutorService,boolean useCustomThreadPool){
         this.setCumstomizeExecutorService(cumstomizeExecutorService);
         if(useCustomThreadPool){
             this.usingExecutorService = cumstomizeExecutorService;
@@ -86,7 +86,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             crawlerAction.setProperty(this.property);
             crawlMes.setCurrentUrl(url);
             //FIXME 不要让它抛警告
-            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
+            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
               T1 re = HttpClientTool.get(url,
                         this.getHeader(),
                         this.startConfiger.getHttpClient(),
@@ -191,7 +191,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
         public void setCrawlerAction(CrawlerAction crawlerAction){
             this.crawlerAction = crawlerAction;
-            this.isCollection = SpiderUtil.isArgumentsCollectionInSuperClass(crawlerAction,1);
+            this.isCollection = SpiderUtil.isArgumentsCollectionInSuperClass(crawlerAction,0);
         }
 
         public void setHttpClient(CloseableHttpClient httpClient){
@@ -205,7 +205,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     }
 
-    public Spider setStarterConfiger(String[] urls,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+    public AbstractSpider setStarterConfiger(String[] urls,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
         this.startConfiger = new StartConfiger();
         this.startConfiger.setUrls(urls);
         this.startConfiger.setCrawlerAction(crawlerAction);
@@ -214,11 +214,11 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return this;
     }
 
-    public Spider setStarterConfiger(String[] urls,CrawlerAction crawlerAction){
+    public AbstractSpider setStarterConfiger(String[] urls,CrawlerAction crawlerAction){
         return setStarterConfiger(urls, crawlerAction,null);
     }
 
-    public Spider setStarterConfiger(String url,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+    public AbstractSpider setStarterConfiger(String url,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
         this.startConfiger = new StartConfiger();
         this.startConfiger.setUrl(url);
         this.startConfiger.setCrawlerAction(crawlerAction);
@@ -227,7 +227,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return this;
     }
 
-    public Spider setStarterConfiger(String url,CrawlerAction crawlerAction){
+    public AbstractSpider setStarterConfiger(String url,CrawlerAction crawlerAction){
         return setStarterConfiger(url, crawlerAction,null);
     }
 }

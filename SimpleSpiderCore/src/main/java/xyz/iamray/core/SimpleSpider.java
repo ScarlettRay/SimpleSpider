@@ -22,6 +22,8 @@ import java.util.List;
 public class SimpleSpider extends AbstractSpider{
 
 
+    private SimpleSpider(){}
+
     /**
      * 创建
      * @return
@@ -78,6 +80,7 @@ public class SimpleSpider extends AbstractSpider{
      * @param <T2>
      * @return
      */
+    @Override
     public <T1,T2> Result<T2> start(){
         CrawlerAction<T1,T2> crawlerAction = startConfiger.getCrawlerAction();
         if(this.startConfiger.getUrls() != null

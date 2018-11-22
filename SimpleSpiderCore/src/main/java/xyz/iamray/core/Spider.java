@@ -1,6 +1,7 @@
 package xyz.iamray.core;
 
 import xyz.iamray.action.CrawlerAction;
+import xyz.iamray.link.Result;
 
 /**
  * @author liuwenrui
@@ -24,5 +25,8 @@ public interface Spider {
      * @param crawlerAction
      */
     <T1,T2> void asyncCrawl(String url,CrawlerAction<T1,T2> crawlerAction);
+
+
+    <T1,T2> Result<T2> start();
 
 }
