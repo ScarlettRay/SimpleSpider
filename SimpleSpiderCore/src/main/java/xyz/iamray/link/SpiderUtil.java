@@ -61,14 +61,11 @@ public class SpiderUtil {
         Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
         Class[] types = new Class[genericType.length];
         for (int i = 0; i < genericType.length; i++) {
-            if(genericType[i] instanceof ParameterizedTypeImpl &&
-                    (Collection.class.isAssignableFrom(((ParameterizedTypeImpl)genericType[i]).getRawType())
-                    || Map.class.isAssignableFrom(((ParameterizedTypeImpl)genericType[i]).getRawType()))){
+            if(genericType[i] instanceof ParameterizedTypeImpl){
                 types[i] = ((ParameterizedTypeImpl) genericType[i]).getRawType();
             }else if(genericType[i] instanceof Class){
                 types[i] = (Class) genericType[i];
             }
-
         }
         return types;
     }

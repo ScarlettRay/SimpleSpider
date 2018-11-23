@@ -65,7 +65,7 @@ public class SpiderUtilTest {
      class TestInterface<T1,T2> extends Testinterface0<JSON,Document>{}
 
 
-     class TestTowType extends TestInterface<List<String>,Map<String,String>>{
+     class TestTowType extends TestInterface<Testinterface0<String,String>,Map<String,String>>{
 
     }
 
