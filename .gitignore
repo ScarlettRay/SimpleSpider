@@ -1,10 +1,11 @@
-**/traget
+**/target
 *.class
 
 # IDEA artifacts and output dirs
 *.iml
 *.ipr
 *.iws
+*.jar
 .idea
 out
 test-output

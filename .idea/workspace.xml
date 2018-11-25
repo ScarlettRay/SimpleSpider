@@ -2,26 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dae6e87-49d9-4c2e-b7b7-1edaaf315ab4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/ActionParseException.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_6.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpider.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/pom.xml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/log4j.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/pom.xml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/SimpleSpider-Core-1.0-SNAPSHOT.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/maven-archiver/pom.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/SimpleSpider.AppTest.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/TEST-SimpleSpider.AppTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/TEST-test.java.AppTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/TEST-xyz.iamray.core.SimpleSpiderTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/TEST-xyz.iamray.link.SpiderUtilTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/TEST-xyz.iamray.link.http.HttpClientToolTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/test.java.AppTest.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/xyz.iamray.core.SimpleSpiderTest.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/xyz.iamray.link.SpiderUtilTest.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/surefire-reports/xyz.iamray.link.http.HttpClientToolTest.txt" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,14 +44,24 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.71428573">
+    <splitter split-orientation="horizontal" split-proportion="0.4569378">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pom.xml">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="192">
                   <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="36" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="126">
+                  <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -124,16 +132,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="162">
                   <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PassAndCollectExceptionStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/PassAndCollectExceptionStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -282,7 +280,6 @@
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/ExceptionWrapperz.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/Result.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ExceptionHandler.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ExceptionStatusCode.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java" />
@@ -314,6 +311,7 @@
         <option value="$PROJECT_DIR$/SimpleSpiderCore/pom.xml" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -738,7 +736,7 @@
       <workItem from="1534239073309" duration="1430000" />
       <workItem from="1541214572930" duration="36849000" />
       <workItem from="1541942833365" duration="12614000" />
-      <workItem from="1542272821651" duration="61371000" />
+      <workItem from="1542272821651" duration="61529000" />
     </task>
     <servers />
   </component>
@@ -775,7 +773,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134215000" />
+    <option name="totallyTimeSpent" value="134373000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -809,7 +807,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13663845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23462088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23462088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16444983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -958,14 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1385,6 +1375,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="36" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding />
         </state>
       </provider>
