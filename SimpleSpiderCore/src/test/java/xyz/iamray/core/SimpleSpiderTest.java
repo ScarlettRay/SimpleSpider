@@ -29,6 +29,10 @@ public class SimpleSpiderTest {
 
     @Test
     public void crawlBundle() {
+        String[] urls = new String[]{jsonUrl,jsonUrl};
+        Result<List<String>> result = SimpleSpider.make().defaultThreadPool()
+                .setStarterConfiger(urls,new AnimeAction()).start();
+        System.out.println(result.getObjList());
     }
 
     @Test

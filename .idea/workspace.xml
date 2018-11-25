@@ -2,14 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dae6e87-49d9-4c2e-b7b7-1edaaf315ab4" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/ActionParseException.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_6.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpider.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/SimpleSpiderCore.iml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/pom.xml" afterPath="$PROJECT_DIR$/SimpleSpiderCore/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java" />
       <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" afterPath="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderCore/target/classes/log4j.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/SimpleSpiderSample.iml" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/pom.xml" afterPath="$PROJECT_DIR$/SimpleSpiderSample/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/SimpleSpiderSample/target/" />
     <ignored path="$PROJECT_DIR$/SimpleSpiderCore/target/" />
+    <ignored path="$PROJECT_DIR$/../../wechat_dev/图片小程序后台/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,96 +46,104 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40268987">
+    <splitter split-orientation="horizontal" split-proportion="0.71428573">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AbstractSpider.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="192">
+                  <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="36" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-82">
+                  <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderSample/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="257">
+                  <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AbstractSpider.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+                <state relative-caret-position="155">
+                  <caret line="134" column="39" lean-forward="false" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AbstractDocumentCrawlerAction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractDocumentCrawlerAction.java">
+          <file leaf-file-name="HttpClientPoolProperty.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPoolProperty.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="108">
+                  <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimpleSpider.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#649#650#0" expanded="true" />
-                    <element signature="e#678#679#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NormalCrawlMes.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/NormalCrawlMes.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#390#391#0" expanded="true" />
-                    <element signature="e#785#786#0" expanded="true" />
-                    <element signature="e#826#827#0" expanded="true" />
-                    <element signature="e#1035#1036#0" expanded="true" />
-                    <element signature="e#1069#1070#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AbstractJsonCrawlerAction.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractJsonCrawlerAction.java">
+          <file leaf-file-name="StringParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="144">
-                  <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+                  <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpiderUtil.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java">
+          <file leaf-file-name="CrawlerAction.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="59" column="48" lean-forward="true" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+                <state relative-caret-position="196">
+                  <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ParameterizedTypeImpl.class" pinned="false" current-in-tab="false">
-            <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/generics/reflectiveObjects/ParameterizedTypeImpl.class">
+          <file leaf-file-name="NetWorkException.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/NetWorkException.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="665">
-                  <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#1523#1524#0" expanded="true" />
-                    <element signature="e#1558#1559#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="162">
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HttpClientTool.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientTool.java">
+          <file leaf-file-name="PassAndCollectExceptionStrategy.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/PassAndCollectExceptionStrategy.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-498">
-                  <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+                <state relative-caret-position="288">
+                  <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ActionParseException.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/ActionParseException.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="216">
+                  <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -127,26 +153,36 @@
       </split-first>
       <split-second>
         <leaf>
+          <file leaf-file-name="HttpClientToolTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="32" column="117" lean-forward="false" selection-start-line="32" selection-start-column="117" selection-end-line="32" selection-end-column="117" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="SpiderUtilTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="46" column="80" lean-forward="true" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
+                <state relative-caret-position="486">
+                  <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
                   <folding>
-                    <element signature="e#1757#1758#0" expanded="true" />
-                    <element signature="e#1792#1793#0" expanded="true" />
-                    <element signature="e#1961#1962#0" expanded="true" />
-                    <element signature="e#1996#1997#0" expanded="true" />
+                    <element signature="e#1759#1760#0" expanded="true" />
+                    <element signature="e#1794#1795#0" expanded="true" />
+                    <element signature="e#1963#1964#0" expanded="true" />
+                    <element signature="e#1998#1999#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SimpleSpiderTest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SimpleSpiderTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+                <state relative-caret-position="586">
+                  <caret line="40" column="66" lean-forward="false" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#796#797#0" expanded="true" />
@@ -156,11 +192,21 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="Spider.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="504">
+                  <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="JSONArray.java" pinned="false" current-in-tab="false">
             <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.45/fastjson-1.2.45-sources.jar!/com/alibaba/fastjson/JSONArray.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="162">
-                  <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                  <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -176,6 +222,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="DocumentParser.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/DocumentParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -185,8 +241,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -207,14 +263,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/api/impl/AbstractJsonCrawlerAction.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/api/CrawlerAction.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/api/CrawlerAction.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/common/AbstractSpider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/common/Spider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMesRepo.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/Repo.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientPoolProperty.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientPool.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/utils/http/HttpClientTool.java" />
@@ -250,14 +301,19 @@
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ThrowExceptionStrategy.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/CrawlMes.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/repo/NormalCrawlMes.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
-        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" />
         <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/ActionParseException.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderSample/pom.xml" />
+        <option value="$PROJECT_DIR$/../../wechat_dev/图片小程序后台/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/pom.xml" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java" />
+        <option value="$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java" />
       </list>
     </option>
   </component>
@@ -281,12 +337,12 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="simplespider" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="SimpleSpider-Core" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="simplespider" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="SimpleSpider-Core" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
       <select />
@@ -296,9 +352,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="708" />
-    <option name="width" value="1219" />
-    <option name="height" value="1047" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="819" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -350,141 +406,24 @@
               <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-              <item name="spiderexceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="link" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="link" type="462c0819:PsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="link" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderCore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="iamray" type="462c0819:PsiDirectoryNode" />
-              <item name="link" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderSample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderSample" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderSample" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleSpiderSample" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bilianimespider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simplespider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SimpleSpiderSample" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bilianimespider" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -553,7 +492,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SimpleSpiderTest.start">
+  <component name="RunManager" selected="JUnit.HttpClientToolTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
@@ -574,7 +513,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="HttpClientToolTest.get (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpClientToolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="xyz.iamray.link.http.*" />
@@ -586,8 +525,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="xyz.iamray.link.http" />
       <option name="MAIN_CLASS_NAME" value="xyz.iamray.link.http.HttpClientToolTest" />
-      <option name="METHOD_NAME" value="get" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -599,32 +538,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="HttpClientToolTest.post" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="xyz.iamray.link.http.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="SimpleSpiderCore" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="xyz.iamray.link.http" />
-      <option name="MAIN_CLASS_NAME" value="xyz.iamray.link.http.HttpClientToolTest" />
-      <option name="METHOD_NAME" value="post" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="SimpleSpiderTest.make" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleSpiderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="xyz.iamray.core.*" />
@@ -636,7 +550,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="xyz.iamray.core" />
       <option name="MAIN_CLASS_NAME" value="xyz.iamray.core.SimpleSpiderTest" />
-      <option name="METHOD_NAME" value="make" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="SimpleSpiderTest.crawlBundle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="xyz.iamray.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SimpleSpiderCore" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="xyz.iamray.core" />
+      <option name="MAIN_CLASS_NAME" value="xyz.iamray.core.SimpleSpiderTest" />
+      <option name="METHOD_NAME" value="crawlBundle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -674,7 +613,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="SpiderUtilTest.TestgetClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpiderUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="xyz.iamray.link.*" />
@@ -686,8 +625,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="xyz.iamray.link" />
       <option name="MAIN_CLASS_NAME" value="xyz.iamray.link.SpiderUtilTest" />
-      <option name="METHOD_NAME" value="TestgetClass" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -731,6 +670,12 @@
       <module name="SimpleSpider" />
       <envs />
     </configuration>
+    <configuration name="WechatimageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="xyz.iamray.WechatimageApplication" />
+      <module name="wechatimage" />
+      <envs />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -758,20 +703,21 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.HttpClientToolTest.get (1)" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.HttpClientToolTest.post" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.start" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SpiderUtilTest.TestgetClass" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.make" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.start" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.crawlBundle" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.WechatimageApplication" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SpiderUtilTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.HttpClientToolTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.start" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.make" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SpiderUtilTest.TestgetClass" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.HttpClientToolTest.post" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.HttpClientToolTest.get (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.HttpClientToolTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SpiderUtilTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.crawlBundle" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SimpleSpiderTest.start" />
       </list>
     </recent_temporary>
   </component>
@@ -792,44 +738,44 @@
       <workItem from="1534239073309" duration="1430000" />
       <workItem from="1541214572930" duration="36849000" />
       <workItem from="1541942833365" duration="12614000" />
-      <workItem from="1542272821651" duration="52679000" />
+      <workItem from="1542272821651" duration="61371000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="HttpClientToolTest - 2018.11.24 at 23h 38m 33s.xml">
+      <configuration name="HttpClientToolTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HttpClientToolTest - 2018.11.24 at 23h 38m 56s.xml">
+      <configuration name="HttpClientToolTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HttpClientToolTest - 2018.11.24 at 23h 39m 34s.xml">
+      <configuration name="HttpClientToolTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSpiderTest - 2018.11.24 at 23h 37m 31s.xml">
+      <configuration name="SimpleSpiderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSpiderTest_crawlBundle - 2018.11.24 at 11h 45m 41s.xml">
+      <configuration name="SimpleSpiderTest.crawlBundle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSpiderTest_crawlBundle - 2018.11.24 at 11h 45m 54s.xml">
+      <configuration name="SimpleSpiderTest.crawlBundle" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="SimpleSpiderTest_make - 2018.11.23 at 20h 08m 55s.xml">
       <configuration name="SimpleSpiderTest.make" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSpiderTest_start - 2018.11.22 at 22h 50m 28s.xml">
-      <configuration name="SimpleSpiderTest.start" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSpiderTest_start - 2018.11.23 at 15h 43m 07s.xml">
-      <configuration name="SimpleSpiderTest.start" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSpiderTest_start - 2018.11.23 at 20h 08m 20s.xml">
-      <configuration name="SimpleSpiderTest.start" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SimpleSpiderTest_start - 2018.11.23 at 20h 09m 01s.xml">
       <configuration name="SimpleSpiderTest.start" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpiderUtilTest_TestgetClass - 2018.11.23 at 15h 36m 35s.xml">
-      <configuration name="SpiderUtilTest.TestgetClass" configurationId="JUnit" />
+    <history-entry file="SpiderUtilTest - 2018.11.24 at 23h 37m 40s.xml">
+      <configuration name="SpiderUtilTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpiderUtilTest_TestgetClass - 2018.11.23 at 15h 38m 05s.xml">
-      <configuration name="SpiderUtilTest.TestgetClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpiderUtilTest_TestgetClass - 2018.11.23 at 15h 40m 28s.xml">
-      <configuration name="SpiderUtilTest.TestgetClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpiderUtilTest_TestgetClass - 2018.11.23 at 15h 42m 18s.xml">
-      <configuration name="SpiderUtilTest.TestgetClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpiderUtilTest_TestgetClass - 2018.11.23 at 15h 42m 46s.xml">
-      <configuration name="SpiderUtilTest.TestgetClass" configurationId="JUnit" />
+    <history-entry file="SpiderUtilTest - 2018.11.24 at 23h 38m 14s.xml">
+      <configuration name="SpiderUtilTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125523000" />
+    <option name="totallyTimeSpent" value="134215000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,32 +792,36 @@
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16738197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2490931" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3083434" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49455863" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.030042918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.452237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13663845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.065808296" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23462088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16444983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2490931" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -915,7 +865,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java</url>
-          <line>44</line>
+          <line>48</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
@@ -980,85 +930,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="304" column="35" lean-forward="true" selection-start-line="304" selection-start-column="35" selection-end-line="304" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ByteParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/ParserMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <element signature="e#866#867#0" expanded="false" />
-            <element signature="e#911#912#0" expanded="false" />
-            <element signature="e#949#950#0" expanded="false" />
-            <element signature="e#986#987#0" expanded="false" />
-            <element signature="e#1038#1039#0" expanded="false" />
-            <element signature="e#1081#1082#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar!/org/apache/commons/logging/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="55" column="2" lean-forward="true" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3-sources.jar!/org/apache/http/client/protocol/RequestAddCookies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="69" column="20" lean-forward="false" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/security/GeneralSecurityException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/security/cert/CertificateException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jsse.jar!/sun/security/ssl/Handshaker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jsse.jar!/sun/security/ssl/Alerts.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -1118,22 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/NetWorkException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/AddressException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/SpiderException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1175,16 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/PassAndCollectExceptionStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1247,16 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1265,23 +1100,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/SimpleSpider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="false" />
+            <element signature="e#678#679#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1297,7 +1122,7 @@
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.45/fastjson-1.2.45-sources.jar!/com/alibaba/fastjson/JSONArray.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1347,11 +1172,11 @@
         <state relative-caret-position="306">
           <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding>
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="false" />
+            <element signature="e#785#786#0" expanded="false" />
+            <element signature="e#826#827#0" expanded="false" />
+            <element signature="e#1035#1036#0" expanded="false" />
+            <element signature="e#1069#1070#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1393,21 +1218,20 @@
         <state relative-caret-position="665">
           <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="27" />
           <folding>
-            <element signature="e#1523#1524#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="46" column="80" lean-forward="true" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
-          <folding>
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1961#1962#0" expanded="true" />
-            <element signature="e#1996#1997#0" expanded="true" />
+            <marker date="1513730554000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1513730554000" expanded="false" signature="162:381" ph="..." />
+            <marker date="1513730554000" expanded="true" signature="639:842" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="892:1226" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="1312:1379" ph="{...}" />
+            <marker date="1513730554000" expanded="false" signature="1423:1434" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="1482:1488" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="1522:1533" ph=" { " />
+            <marker date="1513730554000" expanded="true" signature="1553:1559" ph=" }" />
+            <marker date="1513730554000" expanded="false" signature="1591:1602" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="1624:1630" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="1671:2207" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="2235:2368" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="2399:3679" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1415,15 +1239,103 @@
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/SpiderUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="59" column="48" lean-forward="true" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/AddressException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/PassAndCollectExceptionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/NetWorkException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/exception/spiderexceptions/ActionParseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="134" column="39" lean-forward="false" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/http/HttpClientPoolProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/Spider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/StringParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../wechat_dev/图片小程序后台/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderSample/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/core/SimpleSpiderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="586">
+          <caret line="40" column="66" lean-forward="false" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
@@ -1432,10 +1344,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/core/AbstractSpider.java">
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/SpiderUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state relative-caret-position="486">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1998#1999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/test/java/xyz/iamray/link/http/HttpClientToolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="32" column="117" lean-forward="false" selection-start-line="32" selection-start-column="117" selection-end-line="32" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/src/main/java/xyz/iamray/link/parser/DocumentParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleSpiderCore/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="36" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1468,7 +1417,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1503,12 +1452,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>SimpleSpiderCore</last-edited>
+          <last-edited>SimpleSpiderSample</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.31130064" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

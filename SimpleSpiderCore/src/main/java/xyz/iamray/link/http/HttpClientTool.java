@@ -86,7 +86,7 @@ public class HttpClientTool extends HttpClientPool{
         return praseResponse(httpGet,httpClient,clazz);
     }
 
-    public <T> T defultGet(String url,Map<String,String> header,Class<T> clazz){
+    public static <T> T defaultGet(String url,Map<String,String> header,Class<T> clazz){
         return get(url,header,getHttpClient(),clazz);
     }
 

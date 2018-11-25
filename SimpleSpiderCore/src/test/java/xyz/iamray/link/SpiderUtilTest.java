@@ -37,7 +37,7 @@ public class SpiderUtilTest {
         Class[] classes =  new Class[]{
                 List.class,Map.class
         };
-        Assert.assertArrayEquals(classes,SpiderUtil.getClass(TestTowType.class));
+       // Assert.assertArrayEquals(classes,SpiderUtil.getClass(TestTowType.class));
         /*
         AnimeAction action = new AnimeAction();
         System.out.println(SpiderUtil.getClass(action.getClass().getSuperclass())[0]);

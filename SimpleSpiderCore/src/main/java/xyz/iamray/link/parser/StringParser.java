@@ -14,7 +14,7 @@ public class StringParser implements Parser<String>{
     @Override
     public String parse(HttpEntity entity, String chartset) {
         try {
-            EntityUtils.toString(entity, chartset);
+           return EntityUtils.toString(entity, chartset);
         } catch (IOException e) {
             e.printStackTrace();
         }

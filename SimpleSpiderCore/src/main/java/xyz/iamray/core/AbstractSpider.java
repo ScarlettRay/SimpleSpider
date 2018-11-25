@@ -92,7 +92,12 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
                         this.startConfiger.getHttpClient(),
                         type);
               log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-              return crawlerAction.crawl(re,this.crawlMes);
+              try {
+                  return crawlerAction.crawl(re,this.crawlMes);
+              }catch (Exception e){
+                  throw new SpiderException(e);
+              }
+
         });
             return future.get();
         } catch (SpiderException se){
@@ -133,6 +138,16 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
                         type);
                 log.info("Crawling "+type.getName()+" success. Dealing result with your action");
 
+                try{
+                    if(this.startConfiger.isCollection){
+                        this.startConfiger.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
+                    }else{
+                        this.startConfiger.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
+                    }
+                }catch(Exception e){
+                    throw new SpiderException(e);
+                }
+
             }catch (SpiderException se){
                 //FIXME 异常处理机制
                 int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
@@ -149,21 +164,17 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
                 }
             }
 
-            if(this.startConfiger.isCollection){
-                this.startConfiger.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
-            }else{
-                this.startConfiger.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
-            }
+
         });
     }
 
 
-    public Spider setProperty(Properties property){
+    public AbstractSpider setProperty(Properties property){
         this.property = property;
         return this;
     }
 
-    public Spider setBlockingQueue(BlockingQueue blockingQueue){
+    public AbstractSpider setBlockingQueue(BlockingQueue blockingQueue){
         this.startConfiger.blockingQueue = blockingQueue;
         return this;
     }
