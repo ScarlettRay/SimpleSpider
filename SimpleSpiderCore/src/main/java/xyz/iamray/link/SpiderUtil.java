@@ -34,6 +34,11 @@ public class SpiderUtil {
     }
 
 
+    /**
+     * 获取泛型的类名字符串
+     * @param clazz
+     * @return
+     */
     public static String[] getClassArguments(Class clazz){
         Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
         String[] types = new String[genericType.length];
@@ -57,6 +62,11 @@ public class SpiderUtil {
         return types;
     }
 
+    /**
+     * 获取泛型的类对象
+     * @param clazz
+     * @return
+     */
     public static Class[] getClass(Class clazz){
         Type[] genericType = ((ParameterizedType)clazz.getGenericSuperclass()).getActualTypeArguments();
         Class[] types = new Class[genericType.length];

@@ -60,12 +60,12 @@ public class SpiderUtilTest {
         }
     }
 
-     class Testinterface0<T1,T2>{}
+    class Testinterface0<T1,T2>{}
 
-     class TestInterface<T1,T2> extends Testinterface0<JSON,Document>{}
+    class TestInterface<T1,T2> extends Testinterface0<JSON,Document>{}
 
 
-     class TestTowType extends TestInterface<Testinterface0<String,String>,Map<String,String>>{
+    class TestTowType extends TestInterface<Testinterface0<String,String>,Map<String,String>>{
 
     }
 

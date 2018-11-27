@@ -23,6 +23,7 @@ public class ParserMap {
         map.put(SpiderUtil.getClassArgumentsFromInterface(DocumentParser.class)[0],new DocumentParser());
         map.put(SpiderUtil.getClassArgumentsFromInterface(JsonParser.class)[0],new JsonParser());
         map.put(SpiderUtil.getClassArgumentsFromInterface(StringParser.class)[0],new StringParser());
+        map.put(SpiderUtil.getClassArgumentsFromInterface(JSONObjectParser.class)[0],new JSONObjectParser());
     }
 
     public boolean contains(String clazz){
