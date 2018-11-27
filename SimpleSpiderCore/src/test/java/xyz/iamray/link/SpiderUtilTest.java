@@ -1,8 +1,6 @@
 package xyz.iamray.link;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import org.jsoup.nodes.Document;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +8,6 @@ import xyz.iamray.action.impl.AbstractDocumentCrawlerAction;
 import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
 import xyz.iamray.repo.CrawlMes;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -70,18 +67,4 @@ public class SpiderUtilTest {
     }
 
 
-    class AnimeAction extends AbstractJsonCrawlerAction<List<String>>{
-
-        @Override
-        public List<String> crawl(JSON t, CrawlMes crawlMes) {
-            JSONObject jsonObject = (JSONObject)t;
-            JSONArray array = jsonObject.getJSONObject("result").getJSONArray("data");
-            List<String> re = new ArrayList<>();
-            array.forEach(e->{
-                JSONObject tmp = (JSONObject)e;
-                re.add(tmp.getString("title"));
-            });
-            return re;
-        }
-    }
 }

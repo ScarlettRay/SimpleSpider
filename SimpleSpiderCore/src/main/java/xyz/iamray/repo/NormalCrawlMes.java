@@ -2,6 +2,7 @@ package xyz.iamray.repo;
 
 import xyz.iamray.exception.ExceptionWrapper;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ public class NormalCrawlMes implements CrawlMes{
 
     private String curUrl;
 
-    private List<ExceptionWrapper> exceptionWrapperzs= null;
+    private List<ExceptionWrapper> exceptionWrapperzs= new LinkedList<>();
 
     private int retryTime;
 

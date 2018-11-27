@@ -16,10 +16,10 @@ public interface CrawlerAction<T1,T2> {
 
     /**
      * Crawl action defined here
-     * @param t
+     * @param src
      * @return
      */
-    T2 crawl(T1 t, CrawlMes crawlMes);
+    T2 crawl(T1 src, CrawlMes crawlMes);
 
     /**
      * <p>Outer program can pass params to spider with this method.

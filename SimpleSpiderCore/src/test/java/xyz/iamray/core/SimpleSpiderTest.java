@@ -1,15 +1,10 @@
 package xyz.iamray.core;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
-import xyz.iamray.action.impl.AbstractJsonCrawlerAction;
+import xyz.iamray.actions.AnimeAction;
 import xyz.iamray.link.Result;
-import xyz.iamray.repo.CrawlMes;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleSpiderTest {
@@ -42,18 +37,4 @@ public class SimpleSpiderTest {
         System.out.println(result.getObj());
     }
 
-    class AnimeAction extends AbstractJsonCrawlerAction<List<String>>{
-
-        @Override
-        public List<String> crawl(JSON t, CrawlMes crawlMes) {
-            JSONObject jsonObject = (JSONObject)t;
-            JSONArray array = jsonObject.getJSONObject("result").getJSONArray("data");
-            List<String> re = new ArrayList<>();
-            array.forEach(e->{
-                JSONObject tmp = (JSONObject)e;
-                re.add(tmp.getString("title"));
-            });
-            return re;
-        }
-    }
 }

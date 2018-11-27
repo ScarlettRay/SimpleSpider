@@ -129,7 +129,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
             crawlerAction.setProperty(this.property);
             this.crawlMes.setCurrentUrl(url);
 
-            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass())[0];
+            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
             T1 re = null;
             try{
                 re = HttpClientTool.get(url,
