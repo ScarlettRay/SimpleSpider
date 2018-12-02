@@ -10,10 +10,9 @@
         <module name="SimpleSpiderSample" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="SimpleSpiderCore" target="1.8" />
       <module name="SimpleSpiderSample" target="1.8" />
-      <module name="wechatimage" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
