@@ -11,7 +11,7 @@ import java.util.List;
  * @since 2018/12/10
  */
 public class AnswerPageImageUrlCrawlAction extends AbstractDocumentCrawlerAction<List<String>>{
-    
+
     @Override
     public List<String> crawl(Document src, CrawlMes crawlMes) {
         return null;

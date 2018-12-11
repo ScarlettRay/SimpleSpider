@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dae6e87-49d9-4c2e-b7b7-1edaaf315ab4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/actions/AnswerPageImageUrlCrawlAction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/starter/TestStarter.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/actions/AnswerPageImageUrlCrawlAction.java" afterPath="$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/actions/AnswerPageImageUrlCrawlAction.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -105,11 +102,11 @@
             <entry file="file://$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/actions/AnswerPageImageUrlCrawlAction.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="234">
-                  <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#409#410#0" expanded="true" />
-                    <element signature="e#436#437#0" expanded="true" />
+                    <element signature="e#405#406#0" expanded="true" />
+                    <element signature="e#432#433#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -1350,11 +1347,11 @@
     <entry file="file://$PROJECT_DIR$/SimpleSpiderSample/src/main/java/xyz/iamray/actions/AnswerPageImageUrlCrawlAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
           </folding>
         </state>
       </provider>
