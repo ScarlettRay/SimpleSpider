@@ -2,14 +2,14 @@
 :beetle: 一个轻量级的爬虫框架，亮点就是够轻，够快，够容易上手
 ### 【简介】
 这个爬虫框架小到只有是十几个类，可以说就是几个工具类合在一起，主要是将 [jsoup](https://github.com/jhy/jsoup) 和 [fastjson](https://github.com/jhy/jsoup) 的API进行封装，
-底层连接用HttpClient,并配置连接池和一个线程池，实现资源的循环利用和多线程爬取，
+底层连接用HttpClient，并配置连接池和一个线程池，实现资源的循环利用和多线程爬取，
 也可以用BlockingQueue完成异步爬取。框架设置了丰富的API来对连接进行个性化配置。
  -  -  -  
 ### 【快速上手】
-> 内置样例讲解--爬取B站的番剧
+> 内置案例讲解--爬取知乎壁纸问题（有哪些壁纸是你永远都不想换掉的？）上的图片（当然你可以更换任何一个话题）
 
-首先定义自己的Action，Action即抓取动作，这个需要用户根据自己的需求来定义，
-sample定义了两个Action类，分别爬取[列表页](https://bangumi.bilibili.com/web_api/season/index_global?page_size=20&version=0&is_finish=0&start_year=0&tag_id=&index_type=1&index_sort=0&quarter=0&page=)和详情页，
+首先定义自己的Action，Action即抓取动作，即你的爬虫需要从请求返回的数据中抓取哪些元素，这个需要用户根据自己的需求来定义，
+案例定义了两个Action类，分别爬取[列表页](https://bangumi.bilibili.com/web_api/season/index_global?page_size=20&version=0&is_finish=0&start_year=0&tag_id=&index_type=1&index_sort=0&quarter=0&page=)和详情页，
 列表页请求获取的数据类型是json格式的数据，
 所以定义的Action就应该继承AbstractJsonCrawlerAction类，详情页请求获取的是Document，Action继承AbstractDocumentCrawlerAction,
 泛型填入你要从Action中返回的数据。
