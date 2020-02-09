@@ -1,5 +1,6 @@
 package xyz.iamray.repo;
 
+import org.apache.http.Header;
 import xyz.iamray.exception.ExceptionWrapper;
 
 import java.util.List;
@@ -21,5 +22,9 @@ public interface CrawlMes {
     void addExceptionWrapper(ExceptionWrapper exceptionWrapper);
 
     int increamentAndGetRetryTime();
+
+    void setHeaders(Header[] headers);
+
+    String getLastHeaderValue(String name);
 
 }

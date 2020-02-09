@@ -4,15 +4,15 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.impl.client.CloseableHttpClient;
 import xyz.iamray.action.CrawlerAction;
-import xyz.iamray.exception.ExceptionStrategy;
-import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
 import xyz.iamray.repo.CrawlMes;
 
-import java.util.Collection;
+import java.util.Map;
 import java.util.Properties;
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author liuwenrui
@@ -31,7 +31,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     /**
      * 正在使用的线程池
      */
-    private ExecutorService usingExecutorService;
+    protected ExecutorService usingExecutorService;
 
     /**
      * 用户属性，用于与外部进行交互的属性储存
@@ -78,104 +78,14 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return this;
     }
 
-    @Override
-    public <T1,T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
-        try {
-        Future<T2> future = usingExecutorService.submit(()->{
-            //外部属性注入
-            crawlerAction.setProperty(this.property);
-            crawlMes.setCurrentUrl(url);
-            //FIXME 不要让它抛警告
-            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
-              T1 re = HttpClientTool.get(url,
-                        this.getHeader(),
-                        this.startConfiger.getHttpClient(),
-                        type);
-              log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-              try {
-                  return crawlerAction.crawl(re,this.crawlMes);
-              }catch (Exception e){
-                  throw new SpiderException(e);
-              }
-
-        });
-            return future.get();
-        } catch (SpiderException se){
-            //FIXME 异常处理机制
-            int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
-            //对爬虫线程的后续处理
-            if(s == ExceptionStrategy.RETRY){
-                //retry in limit times
-                if(crawlMes.increamentAndGetRetryTime()<3){
-                    return serialCrawl(url,crawlerAction);
-                }
-            }else if(s == ExceptionStrategy.BREAKOUT){
-                //do nothing;
-            }else if(s == ExceptionStrategy.IGNORE){
-                //do nothing;
-            }
-        }catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
-    public <T1,T2> void asyncCrawl(String url,CrawlerAction<T1,T2> crawlerAction){
-        usingExecutorService.execute(()->{
-            //外部属性注入
-            crawlerAction.setProperty(this.property);
-            this.crawlMes.setCurrentUrl(url);
-
-            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
-            T1 re = null;
-            try{
-                re = HttpClientTool.get(url,
-                        this.getHeader(),
-                        this.startConfiger.getHttpClient(),
-                        type);
-                log.info("Crawling "+type.getName()+" success. Dealing result with your action");
-
-                try{
-                    if(this.startConfiger.isCollection){
-                        this.startConfiger.getBlockingQueue().addAll((Collection)crawlerAction.crawl(re,this.crawlMes));
-                    }else{
-                        this.startConfiger.getBlockingQueue().add(crawlerAction.crawl(re,this.crawlMes));
-                    }
-                }catch(Exception e){
-                    throw new SpiderException(e);
-                }
-
-            }catch (SpiderException se){
-                //FIXME 异常处理机制
-                int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
-                //对爬虫线程的后续处理
-                if(s == ExceptionStrategy.RETRY){
-                    //retry in limit times
-                    if(crawlMes.increamentAndGetRetryTime()<3){
-                        asyncCrawl(url,crawlerAction);
-                    }
-                }else if(s == ExceptionStrategy.BREAKOUT){
-                    //do nothing;
-                }else if(s == ExceptionStrategy.IGNORE){
-                    //do nothing;
-                }
-            }
-
-
-        });
-    }
-
 
     public AbstractSpider setProperty(Properties property){
         this.property = property;
         return this;
     }
 
-    public AbstractSpider setBlockingQueue(BlockingQueue blockingQueue){
-        this.startConfiger.blockingQueue = blockingQueue;
+    public AbstractSpider setRequestHeader(Map<String,String> header){
+        super.setHeader(header);
         return this;
     }
 
@@ -192,6 +102,8 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         private String url;
 
         private String[] urls;
+
+        private Map<String, String> postBody;
 
         /**
          * async crawl need set blockingQueue
@@ -216,29 +128,65 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     }
 
-    public AbstractSpider setStarterConfiger(String[] urls,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+    public AbstractSpider setStarterConfiger(String[] urls,Map<String, String> postBody,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
         this.startConfiger = new StartConfiger();
         this.startConfiger.setUrls(urls);
         this.startConfiger.setCrawlerAction(crawlerAction);
         this.startConfiger.setHttpClient(httpClient);
+        this.startConfiger.setPostBody(postBody);
 
         return this;
     }
 
-    public AbstractSpider setStarterConfiger(String[] urls,CrawlerAction crawlerAction){
-        return setStarterConfiger(urls, crawlerAction,null);
-    }
-
-    public AbstractSpider setStarterConfiger(String url,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+    public AbstractSpider setStarterConfiger(String url,Map<String, String> postBody,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
         this.startConfiger = new StartConfiger();
         this.startConfiger.setUrl(url);
         this.startConfiger.setCrawlerAction(crawlerAction);
         this.startConfiger.setHttpClient(httpClient);
+        this.startConfiger.setPostBody(postBody);
 
         return this;
     }
 
+    /**
+     * get请求
+     * @param urls
+     * @param crawlerAction
+     * @return
+     */
+    public AbstractSpider setStarterConfiger(String[] urls,CrawlerAction crawlerAction){
+        return setStarterConfiger(urls,null, crawlerAction,null);
+    }
+
+    /**
+     * post请求
+     * @param url
+     * @param crawlerAction
+     * @return
+     */
     public AbstractSpider setStarterConfiger(String url,CrawlerAction crawlerAction){
-        return setStarterConfiger(url, crawlerAction,null);
+        return setStarterConfiger(url,null, crawlerAction,null);
+    }
+
+    /**
+     * post请求
+     * @param url
+     * @param postBody
+     * @param crawlerAction
+     * @return
+     */
+    public AbstractSpider setStarterConfiger(String url,Map<String, String> postBody,CrawlerAction crawlerAction){
+        return setStarterConfiger(url,postBody,crawlerAction,null);
+    }
+
+    /**
+     * post请求
+     * @param urls
+     * @param postBody
+     * @param crawlerAction
+     * @return
+     */
+    public AbstractSpider setStarterConfiger(String urls[],Map<String, String> postBody,CrawlerAction crawlerAction){
+        return setStarterConfiger(urls,postBody,crawlerAction,null);
     }
 }

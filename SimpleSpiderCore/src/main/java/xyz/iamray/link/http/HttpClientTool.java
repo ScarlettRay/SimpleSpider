@@ -19,9 +19,9 @@ import xyz.iamray.exception.spiderexceptions.AddressException;
 import xyz.iamray.exception.spiderexceptions.NetWorkException;
 import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.link.parser.ParserMap;
+import xyz.iamray.repo.CrawlMes;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,17 +43,15 @@ public class HttpClientTool extends HttpClientPool{
      * @param httpClient
      * @return
      */
-    private static <T> T praseResponse(HttpRequestBase request, CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException{
-        InputStream in = null;
+    private static <T> T praseResponse(HttpRequestBase request, int httpStatus,CrawlMes crawlMes,CloseableHttpClient httpClient, Class<T> clazz) throws SpiderException{
         HttpEntity entity = null;
         try(CloseableHttpResponse respone = httpClient.execute(request)){
-            if (respone.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+            if (respone.getStatusLine().getStatusCode() != httpStatus) {
                 request.abort();
                 return null;
             }
             entity = respone.getEntity();
-            in = entity.getContent();
-
+            crawlMes.setHeaders(respone.getAllHeaders());
             //编码获取
             String charsetName = SpiderConstant.UTF8;
             if(entity.getContentType() != null){
@@ -77,20 +75,24 @@ public class HttpClientTool extends HttpClientPool{
     }
 
 
-    public static <T> T get(String url,Map<String,String> header,CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException {
+    public static <T> T get(String url,Map<String,String> header,int httpStatus,CrawlMes crawlMes,CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException {
         //拼接url
         HttpGet httpGet = new HttpGet(url);
         for(Map.Entry<String,String> entry : header.entrySet()){
             httpGet.setHeader(entry.getKey(),entry.getValue());
         }
-        return praseResponse(httpGet,httpClient,clazz);
+        return praseResponse(httpGet,httpStatus,crawlMes,httpClient,clazz);
     }
 
-    public static <T> T defaultGet(String url,Map<String,String> header,Class<T> clazz){
-        return get(url,header,getHttpClient(),clazz);
+    public static <T> T get(String url,Map<String,String> header,CrawlMes crawlMes,CloseableHttpClient httpClient,Class<T> clazz){
+        return get(url, header,HttpStatus.SC_OK,crawlMes,httpClient, clazz);
     }
 
-    public static <T> T post(String url,Map<String,String> header,Map<String,String> postBody,CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException{
+    public static <T> T defaultGet(String url,Map<String,String> header,CrawlMes crawlMes,Class<T> clazz){
+        return get(url,header,HttpStatus.SC_OK,crawlMes,getHttpClient(),clazz);
+    }
+
+    public static <T> T post(String url,Map<String,String> header,int httpStatus,Map<String,String> postBody,CrawlMes crawlMes,CloseableHttpClient httpClient,Class<T> clazz) throws SpiderException{
         //拼接url
         HttpPost httpPost = new HttpPost(url);
         for(Map.Entry<String,String> entry : header.entrySet()){
@@ -108,12 +110,15 @@ public class HttpClientTool extends HttpClientPool{
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return praseResponse(httpPost,httpClient,clazz);
-
+        return praseResponse(httpPost,httpStatus,crawlMes,httpClient,clazz);
     }
 
-    public static <T> T defaultPost(String url,Map<String,String> header,Map<String,String> postBody,Class<T> clazz){
-        return post(url,header,postBody,getHttpClient(),clazz);
+    public static <T> T post(String url,Map<String,String> header,Map<String,String> postBody,CrawlMes crawlMes,CloseableHttpClient httpClient,Class<T> clazz){
+        return post(url, header,HttpStatus.SC_OK,postBody,crawlMes,httpClient, clazz);
+    }
+
+    public static <T> T defaultPost(String url,Map<String,String> header,Map<String,String> postBody,CrawlMes crawlMes,Class<T> clazz){
+        return post(url,header,HttpStatus.SC_OK,postBody,crawlMes,getHttpClient(),clazz);
     }
 
 

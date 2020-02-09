@@ -1,9 +1,11 @@
 package xyz.iamray.link.http;
 
+import org.apache.http.HttpStatus;
 import org.jsoup.nodes.Document;
 import org.junit.Assert;
 import org.junit.Test;
 import xyz.iamray.core.SpiderConstant;
+import xyz.iamray.repo.NormalCrawlMes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +31,7 @@ public class HttpClientToolTest {
 
     @Test
     public void get(){
-        Assert.assertNotNull(HttpClientTool.get(url, SpiderConstant.DefaultHeader,HttpClientPool.getHttpClient(), Document.class));
+        Assert.assertNotNull(HttpClientTool.get(url, SpiderConstant.DefaultHeader, HttpStatus.SC_OK, new NormalCrawlMes(),HttpClientPool.getHttpClient(), Document.class));
         //Assert.assertNull(HttpClientTool.get(wrongUrl, SpiderConstant.DefaultHeader,HttpClientPool.getHttpClient(), Document.class));
     }
 

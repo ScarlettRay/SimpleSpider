@@ -1,6 +1,7 @@
 package xyz.iamray.core;
 
 import lombok.Data;
+import org.apache.http.HttpStatus;
 import xyz.iamray.exception.ExceptionStrategy;
 import xyz.iamray.exception.PassAndCollectExceptionStrategy;
 
@@ -29,6 +30,11 @@ public class SpiderProperty {
      * 用户自定义的线程池
      */
     private ExecutorService cumstomizeExecutorService;
+
+    /**
+     * 定义要处理的状态码
+     */
+    private int httpStatus = HttpStatus.SC_OK;
 
 
 }

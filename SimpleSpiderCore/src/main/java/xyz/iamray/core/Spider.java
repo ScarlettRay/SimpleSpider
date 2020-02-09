@@ -1,7 +1,8 @@
 package xyz.iamray.core;
 
-import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.link.Result;
+
+import java.util.concurrent.BlockingQueue;
 
 /**
  * @author liuwenrui
@@ -9,24 +10,21 @@ import xyz.iamray.link.Result;
  */
 public interface Spider {
 
-
     /**
-     * <p>Serial crawl
-     * @param crawlerAction
+     * 爬虫启动方法
      * @param <T1>
      * @param <T2>
      * @return
      */
-    <T1,T2> T2 serialCrawl(String url,CrawlerAction<T1,T2> crawlerAction);
-
+    <T1,T2> Result<T2> start();
 
     /**
-     * Asynchronous crawl
-     * @param crawlerAction
+     * 一步爬取的爬虫启动方法
+     * @param blockingQueue
+     * @param <T1>
+     * @param <T2>
+     * @return
      */
-    <T1,T2> void asyncCrawl(String url,CrawlerAction<T1,T2> crawlerAction);
-
-
-    <T1,T2> Result<T2> start();
+    <T1,T2> Result<T2> start(BlockingQueue<T2> blockingQueue);
 
 }

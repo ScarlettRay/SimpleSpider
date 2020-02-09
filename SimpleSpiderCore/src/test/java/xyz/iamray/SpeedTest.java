@@ -1,6 +1,5 @@
 package xyz.iamray;
 
-import org.junit.Test;
 import xyz.iamray.actions.AnimeAction;
 import xyz.iamray.core.SimpleSpider;
 import xyz.iamray.link.Result;
@@ -24,7 +23,7 @@ public class SpeedTest {
     private String[] urls = new String[]{
             jsonUrl,jsonUrl,jsonUrl,jsonUrl,jsonUrl,jsonUrl,jsonUrl,jsonUrl,jsonUrl,jsonUrl};
 
-    @Test
+    //@Test
     public void testInWhileLoop(){
         long pos = System.currentTimeMillis();
         for(int i =0;i<10;i++){
@@ -34,7 +33,7 @@ public class SpeedTest {
         System.out.println(System.currentTimeMillis()-pos);
     }
 
-    @Test
+    //@Test
     public void testInSync(){
         long pos = System.currentTimeMillis();
         BlockingQueue<List<String>> queue = new LinkedBlockingQueue<>();
@@ -44,7 +43,7 @@ public class SpeedTest {
         SimpleSpider.make().defaultThreadPool()
                 .setProperty(pro)
                 .setStarterConfiger(urls,new AnimeAction())
-                .setBlockingQueue(queue).start();
+                .start(queue);
         try {
             countDownLatch.await();
             System.out.println(System.currentTimeMillis()-pos);

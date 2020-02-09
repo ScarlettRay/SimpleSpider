@@ -1,5 +1,6 @@
 package xyz.iamray.repo;
 
+import org.apache.http.Header;
 import xyz.iamray.exception.ExceptionWrapper;
 
 import java.util.LinkedList;
@@ -16,6 +17,8 @@ public class NormalCrawlMes implements CrawlMes{
     private List<ExceptionWrapper> exceptionWrapperzs= new LinkedList<>();
 
     private int retryTime;
+
+    private Header[] responseHeaders;
 
     @Override
     public String getCurrentUrl() {
@@ -49,6 +52,23 @@ public class NormalCrawlMes implements CrawlMes{
     @Override
     public int increamentAndGetRetryTime() {
         return retryTime++;
+    }
+
+    @Override
+    public void setHeaders(Header[] headers) {
+        this.responseHeaders = headers;
+    }
+
+    @Override
+    public String getLastHeaderValue(String name) {
+        for (int i = responseHeaders.length - 1; i >= 0; i--) {
+            final Header header = responseHeaders[i];
+            if (header.getName().equalsIgnoreCase(name)) {
+                return header.getValue();
+            }
+        }
+
+        return null;
     }
 
 }
