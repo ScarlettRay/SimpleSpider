@@ -5,6 +5,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.util.EntityUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 
 import java.io.IOException;
 
@@ -20,8 +21,7 @@ public class DocumentParser implements Parser<Document>{
         try {
             return Jsoup.parse(StringEscapeUtils.unescapeJava(EntityUtils.toString(entity,chartset)));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new SpiderException(e);
         }
-        return null;
     }
 }

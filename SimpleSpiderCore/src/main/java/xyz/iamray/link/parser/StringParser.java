@@ -2,6 +2,7 @@ package xyz.iamray.link.parser;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.util.EntityUtils;
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 
 import java.io.IOException;
 
@@ -16,8 +17,7 @@ public class StringParser implements Parser<String>{
         try {
            return EntityUtils.toString(entity, chartset);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new SpiderException(e);
         }
-        return null;
     }
 }

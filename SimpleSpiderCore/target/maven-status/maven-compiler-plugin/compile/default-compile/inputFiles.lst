@@ -5,6 +5,7 @@
 /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ExceptionStrategy.java
 /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/core/SpiderProperty.java
 /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ThrowExceptionStrategy.java
+/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/action/impl/AbstractStringCrawlerAction.java
 /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/action/AbstractCrawlerAction.java
 /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/exception/ExceptionWrapper.java
 /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/src/main/java/xyz/iamray/action/CrawlerAction.java

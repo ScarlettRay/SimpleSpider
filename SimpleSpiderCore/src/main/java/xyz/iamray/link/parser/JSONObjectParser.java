@@ -3,6 +3,7 @@ package xyz.iamray.link.parser;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.util.EntityUtils;
+import xyz.iamray.exception.spiderexceptions.SpiderException;
 
 import java.io.IOException;
 
@@ -17,8 +18,7 @@ public class JSONObjectParser implements Parser<JSONObject>{
         try {
             return JSONObject.parseObject(EntityUtils.toString(entity, chartset));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new SpiderException(e);
         }
-        return null;
     }
 }

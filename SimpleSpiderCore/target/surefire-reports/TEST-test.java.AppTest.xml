@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="test.java.AppTest" time="0.172" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="test.java.AppTest" time="0.106" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib"/>
-    <property name="sun.java.command" value="/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/surefire/surefirebooter1471402093168382460.jar /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/surefire 2020-02-09T23-30-47_472-jvmRun1 surefire717400498558439512tmp surefire_15891664810239309533tmp"/>
+    <property name="sun.java.command" value="/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/surefire/surefirebooter4703115068001926083.jar /Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/surefire 2020-02-15T17-25-30_847-jvmRun1 surefire8436452420070077540tmp surefire_16186725488188222928tmp"/>
     <property name="surefire.test.class.path" value="/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/test-classes:/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/classes:/Users/liuwenrui/.m2/repository/junit/junit/4.13/junit-4.13.jar:/Users/liuwenrui/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/liuwenrui/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/liuwenrui/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/liuwenrui/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/liuwenrui/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/liuwenrui/.m2/repository/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar:/Users/liuwenrui/.m2/repository/com/alibaba/fastjson/1.2.45/fastjson-1.2.45.jar:/Users/liuwenrui/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/liuwenrui/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar:/Users/liuwenrui/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/liuwenrui/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/liuwenrui/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/liuwenrui/.m2/repository/org/projectlombok/lombok/1.16.18/lombok-1.16.18.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/liuwenrui"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/surefire/surefirebooter1471402093168382460.jar"/>
+    <property name="surefire.real.class.path" value="/Users/liuwenrui/Documents/git/SimpleSpider/SimpleSpiderCore/target/surefire/surefirebooter4703115068001926083.jar"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_161-b12"/>
@@ -59,5 +59,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="test.java.AppTest" time="0.01"/>
+  <testcase name="shouldAnswerWithTrue" classname="test.java.AppTest" time="0.003"/>
 </testsuite>
