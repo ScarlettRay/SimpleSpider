@@ -61,6 +61,7 @@ public class SimpleSpider extends AbstractSpider{
                 Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
                 T1 re = HttpClientTool.get(url,
                         this.getHeader(),
+                        this.startConfiger.getListenHttpStatus(),
                         this.crawlMes,
                         this.startConfiger.getHttpClient(),
                         type);
@@ -106,6 +107,7 @@ public class SimpleSpider extends AbstractSpider{
             try{
                 re = HttpClientTool.get(url,
                         this.getHeader(),
+                        this.startConfiger.getListenHttpStatus(),
                         this.crawlMes,
                         this.startConfiger.getHttpClient(),
                         type);

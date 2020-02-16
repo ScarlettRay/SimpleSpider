@@ -2,6 +2,7 @@ package xyz.iamray.core;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.HttpStatus;
 import org.apache.http.impl.client.CloseableHttpClient;
 import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.link.SpiderUtil;
@@ -112,6 +113,8 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
         private boolean isCollection;
 
+        private int listenHttpStatus = HttpStatus.SC_OK;//监听的http相应状态 默认200
+
         public void setCrawlerAction(CrawlerAction crawlerAction){
             this.crawlerAction = crawlerAction;
             this.isCollection = SpiderUtil.isArgumentsCollectionInSuperClass(crawlerAction,0);
@@ -188,5 +191,10 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
      */
     public AbstractSpider setStarterConfiger(String urls[],Map<String, String> postBody,CrawlerAction crawlerAction){
         return setStarterConfiger(urls,postBody,crawlerAction,null);
+    }
+
+    public AbstractSpider setListenHttpStatus(int httpStatus){
+        this.startConfiger.setListenHttpStatus(httpStatus);
+        return this;
     }
 }

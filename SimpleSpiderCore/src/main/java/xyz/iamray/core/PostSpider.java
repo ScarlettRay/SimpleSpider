@@ -38,6 +38,7 @@ public class PostSpider extends AbstractSpider {
                 Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
                 T1 re = HttpClientTool.post(url,
                         this.getHeader(),
+                        this.startConfiger.getListenHttpStatus(),
                         this.startConfiger.getPostBody(),
                         this.crawlMes,
                         this.startConfiger.getHttpClient(), type);
