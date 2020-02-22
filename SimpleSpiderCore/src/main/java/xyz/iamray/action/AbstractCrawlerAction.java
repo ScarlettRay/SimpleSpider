@@ -12,7 +12,7 @@ public abstract class AbstractCrawlerAction<T1,T2> implements CrawlerAction<T1,T
     @Override
     public <T> T getAttr(String key, Class<T> clazz) {
         if(property == null){
-            throw new NullPointerException();
+            return null;
         }
         return (T)property.get(key);
     }

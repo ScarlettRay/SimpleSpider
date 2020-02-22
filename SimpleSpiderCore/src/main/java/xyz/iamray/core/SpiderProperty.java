@@ -1,6 +1,5 @@
 package xyz.iamray.core;
 
-import lombok.Data;
 import org.apache.http.HttpStatus;
 import xyz.iamray.exception.ExceptionStrategy;
 import xyz.iamray.exception.PassAndCollectExceptionStrategy;
@@ -12,7 +11,6 @@ import java.util.concurrent.ExecutorService;
  * @author liuwenrui
  * @date 2018/11/3
  */
-@Data
 public class SpiderProperty {
 
     /**
@@ -36,5 +34,45 @@ public class SpiderProperty {
      */
     private int httpStatus = HttpStatus.SC_OK;
 
+    public Integer getRetryTime() {
+        return retryTime;
+    }
+
+    public void setRetryTime(Integer retryTime) {
+        this.retryTime = retryTime;
+    }
+
+    public Integer getConnectTimeout() {
+        return connectTimeout;
+    }
+
+    public void setConnectTimeout(Integer connectTimeout) {
+        this.connectTimeout = connectTimeout;
+    }
+
+    public Map<String, String> getHeader() {
+        return header;
+    }
+
+    public void setHeader(Map<String, String> header) {
+        this.header = header;
+    }
+
+    public ExceptionStrategy getExceptionStrategy() {
+        return exceptionStrategy;
+    }
+
+    public void setExceptionStrategy(ExceptionStrategy exceptionStrategy) {
+        this.exceptionStrategy = exceptionStrategy;
+    }
+
+
+    protected void setCumstomizeExecutorService(ExecutorService cumstomizeExecutorService) {
+        this.cumstomizeExecutorService = cumstomizeExecutorService;
+    }
+
+    public int getHttpStatus() {
+        return httpStatus;
+    }
 
 }

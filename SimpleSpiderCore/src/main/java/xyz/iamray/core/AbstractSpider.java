@@ -21,7 +21,6 @@ import java.util.concurrent.Executors;
  *
  */
 @Slf4j
-@Data
 public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     /**
@@ -196,5 +195,29 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     public AbstractSpider setListenHttpStatus(int httpStatus){
         this.startConfiger.setListenHttpStatus(httpStatus);
         return this;
+    }
+
+    public ExecutorService getUsingExecutorService() {
+        return usingExecutorService;
+    }
+
+    public Properties getProperty() {
+        return property;
+    }
+
+    public CrawlMes getCrawlMes() {
+        return crawlMes;
+    }
+
+    public void setCrawlMes(CrawlMes crawlMes) {
+        this.crawlMes = crawlMes;
+    }
+
+    public StartConfiger getStartConfiger() {
+        return startConfiger;
+    }
+
+    public void setStartConfiger(StartConfiger startConfiger) {
+        this.startConfiger = startConfiger;
     }
 }
