@@ -16,6 +16,7 @@ import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.LayeredConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -197,11 +198,16 @@ public class HttpClientPool {
      * @return
      */
     public static CloseableHttpClient getHttpClient(){
+        return getHttpClient(null);
+    }
+
+    public static CloseableHttpClient getHttpClient(BasicCookieStore cookieStore){
         // 配置请求的超时设置
         return HttpClients.custom().setConnectionManager(cm)
                 .setDefaultRequestConfig(defaultRequestConfig)
-                .setRetryHandler(defaultRetryHandler).build();
-
+                .setRetryHandler(defaultRetryHandler)
+                .setDefaultCookieStore(cookieStore)
+                .build();
     }
 
     /**
@@ -211,9 +217,9 @@ public class HttpClientPool {
      * @param connectTimeout
      * @return
      */
-    public static CloseableHttpClient getHttpClientWithConfig(final int retryTime,final int connectTimeout){
+    public static CloseableHttpClient getHttpClientWithConfig(final int retryTime, final int connectTimeout, BasicCookieStore cookieStore){
         if(retryTime == HttpClientPool.retryTime && connectTimeout == HttpClientPool.connectTimeout){
-            return getHttpClient();
+            return getHttpClient(cookieStore);
         }
         RequestConfig localConfig;
         if(requestConfigMap.containsKey(connectTimeout)){
@@ -228,7 +234,9 @@ public class HttpClientPool {
         HttpRequestRetryHandler httpRequestRetryHandler = getRetryHandler(retryTime);
         return HttpClients.custom().setConnectionManager(cm)
                 .setDefaultRequestConfig(localConfig)
-                .setRetryHandler(httpRequestRetryHandler).build();
+                .setRetryHandler(httpRequestRetryHandler)
+                .setDefaultCookieStore(cookieStore)
+                .build();
     }
 
 

@@ -3,7 +3,9 @@ package xyz.iamray.core;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
+import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.cookie.BasicClientCookie;
 import xyz.iamray.action.CrawlerAction;
 import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
@@ -44,8 +46,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
      */
     protected CrawlMes crawlMes = null;
 
-    protected StartConfiger startConfiger = null;
-
+    protected StartConfiger startConfiger = new StartConfiger();
 
 
     static{
@@ -105,6 +106,8 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
         private Map<String, String> postBody;
 
+        protected BasicCookieStore cookieStore;
+
         /**
          * async crawl need set blockingQueue
          */
@@ -121,7 +124,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
         public void setHttpClient(CloseableHttpClient httpClient){
             if(httpClient == null){
-                this.httpClient = HttpClientTool.getHttpClientWithConfig(getRetryTime(),getConnectTimeout());
+                this.httpClient = HttpClientTool.getHttpClientWithConfig(getRetryTime(),getConnectTimeout(),cookieStore);
             }else{
                 this.httpClient = httpClient;
             }
@@ -131,7 +134,6 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     }
 
     public AbstractSpider setStarterConfiger(String[] urls,Map<String, String> postBody,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
-        this.startConfiger = new StartConfiger();
         this.startConfiger.setUrls(urls);
         this.startConfiger.setCrawlerAction(crawlerAction);
         this.startConfiger.setHttpClient(httpClient);
@@ -141,7 +143,6 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     }
 
     public AbstractSpider setStarterConfiger(String url,Map<String, String> postBody,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
-        this.startConfiger = new StartConfiger();
         this.startConfiger.setUrl(url);
         this.startConfiger.setCrawlerAction(crawlerAction);
         this.startConfiger.setHttpClient(httpClient);
@@ -219,5 +220,17 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     public void setStartConfiger(StartConfiger startConfiger) {
         this.startConfiger = startConfiger;
+    }
+
+
+    public AbstractSpider addCookie(String key,String value,String domain,String path){
+        BasicClientCookie cookie = new BasicClientCookie(key,value);
+        cookie.setDomain(domain);
+        cookie.setPath(path);
+        if(startConfiger.cookieStore == null){
+            startConfiger.cookieStore = new BasicCookieStore();
+        }
+        startConfiger.cookieStore.addCookie(cookie);
+        return this;
     }
 }
