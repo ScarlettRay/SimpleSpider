@@ -11,6 +11,7 @@ import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
 import xyz.iamray.repo.CrawlMes;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
@@ -39,7 +40,9 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     /**
      * 用户属性，用于与外部进行交互的属性储存
      */
+    @Deprecated
     protected Properties property = null;
+    protected HashMap<Object,Object> pro = new HashMap<>();
 
 
     /**
@@ -81,8 +84,14 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
     }
 
 
+    @Deprecated
     public AbstractSpider setProperty(Properties property){
         this.property = property;
+        return this;
+    }
+
+    public AbstractSpider setProperty(Object key,Object value){
+        this.pro.put(key, value);
         return this;
     }
 
