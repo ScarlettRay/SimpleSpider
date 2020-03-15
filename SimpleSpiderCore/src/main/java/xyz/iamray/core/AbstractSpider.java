@@ -32,8 +32,9 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
 
     /**
      * 正在使用的线程池
+     * 不设置则使用默认线程池
      */
-    protected ExecutorService usingExecutorService;
+    protected ExecutorService usingExecutorService = defaultExecutorService;
 
     /**
      * 用户属性，用于与外部进行交互的属性储存
