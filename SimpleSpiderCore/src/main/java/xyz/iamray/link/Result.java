@@ -18,6 +18,8 @@ public class Result<T> {
 
     private CrawlMes crawlMes;
 
+    private Exception e;
+
     public Result(T obj,CrawlMes crawlMes){
         this.obj = obj;
         this.crawlMes = crawlMes;
@@ -26,5 +28,9 @@ public class Result<T> {
     public Result(List<T> objList,CrawlMes crawlMes){
         this.objList = objList;
         this.crawlMes = crawlMes;
+    }
+
+    public Result(Exception e){
+        this.e = e;
     }
 }
