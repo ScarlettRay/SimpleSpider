@@ -1,6 +1,5 @@
 package xyz.iamray.exception;
 
-import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.repo.CrawlMes;
 
 /**
@@ -12,9 +11,9 @@ public class PassAndCollectExceptionStrategy implements ExceptionStrategy{
     public static final PassAndCollectExceptionStrategy INSTANCE = new PassAndCollectExceptionStrategy();
 
     @Override
-    public int dealWithException(SpiderException e, CrawlMes crawlMes) {
+    public int dealWithException(Exception e, CrawlMes crawlMes) {
         ExceptionWrapper ew = new ExceptionWrapper(e,crawlMes.getCurrentUrl());
         crawlMes.addExceptionWrapper(ew);
-        return RETRY;
+        return BREAKOUT;
     }
 }

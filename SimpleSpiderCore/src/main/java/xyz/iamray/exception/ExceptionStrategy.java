@@ -1,6 +1,5 @@
 package xyz.iamray.exception;
 
-import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.repo.CrawlMes;
 
 /**
@@ -17,5 +16,5 @@ public interface ExceptionStrategy {
 
     int IGNORE = 2;
 
-    int dealWithException(SpiderException e, CrawlMes crawlMes);
+    int dealWithException(Exception e, CrawlMes crawlMes);
 }

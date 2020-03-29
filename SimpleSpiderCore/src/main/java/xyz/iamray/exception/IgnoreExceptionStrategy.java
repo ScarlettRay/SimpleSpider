@@ -1,6 +1,5 @@
 package xyz.iamray.exception;
 
-import xyz.iamray.exception.spiderexceptions.SpiderException;
 import xyz.iamray.repo.CrawlMes;
 
 /**
@@ -12,7 +11,7 @@ public class IgnoreExceptionStrategy implements ExceptionStrategy{
     public static final IgnoreExceptionStrategy INSTANCE = new IgnoreExceptionStrategy();
 
     @Override
-    public int dealWithException(SpiderException e, CrawlMes crawlMes) {
+    public int dealWithException(Exception e, CrawlMes crawlMes) {
         // do nothing
         return IGNORE;
     }

@@ -6,17 +6,17 @@ import org.apache.http.HttpStatus;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.cookie.BasicClientCookie;
+import org.junit.Assert;
 import xyz.iamray.action.CrawlerAction;
+import xyz.iamray.exception.ExceptionStrategy;
+import xyz.iamray.exception.spiderexceptions.SpiderException;
+import xyz.iamray.link.Result;
 import xyz.iamray.link.SpiderUtil;
 import xyz.iamray.link.http.HttpClientTool;
 import xyz.iamray.repo.CrawlMes;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.*;
+import java.util.concurrent.*;
 
 /**
  * @author liuwenrui
@@ -42,7 +42,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
      */
     @Deprecated
     protected Properties property = null;
-    protected HashMap<Object,Object> pro = new HashMap<>();
+    protected HashMap<String,Object> pro = new HashMap<>();
 
 
     /**
@@ -90,7 +90,7 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return this;
     }
 
-    public AbstractSpider setProperty(Object key,Object value){
+    public AbstractSpider setProperty(String key,Object value){
         this.pro.put(key, value);
         return this;
     }
@@ -243,4 +243,136 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         startConfiger.cookieStore.addCookie(cookie);
         return this;
     }
+
+    protected abstract  <T1,T2> T2 serialAction(String url,CrawlerAction<T1,T2> crawlerAction,Class<T1> type);
+
+    /**
+     * 串行请求
+     * @param url
+     * @param crawlerAction
+     * @param <T1>
+     * @param <T2>
+     * @return
+     */
+    protected <T1,T2> T2 serial(String url,CrawlerAction<T1,T2> crawlerAction){
+        try {
+            Future<T2> future = usingExecutorService.submit(()-> {
+                //外部属性注入
+                crawlerAction.setProperty(this.property);
+                crawlerAction.setProperty(this.pro);
+                crawlMes.setCurrentUrl(url);
+                Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
+                return serialAction(url,crawlerAction,type);
+            });
+            return future.get();
+        } catch (Exception se){
+            //FIXME 异常处理机制
+            int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
+            //对爬虫线程的后续处理
+            if(s == ExceptionStrategy.RETRY){
+                //retry in limit times
+                if(crawlMes.increamentAndGetRetryTime()<3){
+                    return serial(url,crawlerAction);
+                }
+            }else if(s == ExceptionStrategy.BREAKOUT){
+                //do nothing;
+            }else if(s == ExceptionStrategy.IGNORE){
+                //do nothing;
+            }else{
+                throw new SpiderException("不支持的异常处理策略");
+            }
+        }
+        return null;
+    }
+
+    protected abstract <T1,T2> void asyncAction(String url, CrawlerAction<T1,T2> crawlerAction,Class<T1> type);
+
+    /**
+     * 并发请求
+     * @param url
+     * @param crawlerAction
+     * @param <T1>
+     * @param <T2>
+     */
+    protected <T1,T2> void async(String url,CrawlerAction<T1,T2> crawlerAction){
+        usingExecutorService.execute(()->{
+            //外部属性注入
+            crawlerAction.setProperty(this.property);
+            crawlerAction.setProperty(this.pro);
+            this.crawlMes.setCurrentUrl(url);
+
+            Class<T1> type = SpiderUtil.getClass(crawlerAction.getClass().getSuperclass())[0];
+            try{
+                asyncAction(url,crawlerAction,type);
+            }catch (Exception se){
+                //FIXME 异常处理机制
+                int s = this.getExceptionStrategy().dealWithException(se,crawlMes);
+                //对爬虫线程的后续处理
+                if(s == ExceptionStrategy.RETRY){
+                    //retry in limit times
+                    if(crawlMes.increamentAndGetRetryTime()<3){
+                        async(url,crawlerAction);
+                    }
+                }else if(s == ExceptionStrategy.BREAKOUT){
+                    //do nothing;
+                }else if(s == ExceptionStrategy.IGNORE){
+                    //do nothing;
+                }else{
+                    throw new SpiderException("不支持的异常处理策略");
+                }
+            }
+        });
+    }
+
+    private <T1,T2> List<T2> bundle(String[] urls,CrawlerAction<T1,T2> crawlerAction){
+        if(urls == null || urls.length == 0) Assert.fail("urls can not be null!");
+        //boolean isCollection = SpiderUtil.isArgumentsCollectionInSuperClass(crawlerAction,1);
+        if(this.startConfiger.getBlockingQueue() != null){
+            for(String url:urls){
+                async(url,crawlerAction);
+            }
+        }else{
+            List<T2> result = new ArrayList<>();
+            for (String url : urls) {
+                result.add(serial(url,crawlerAction));
+            }
+            return result;
+        }
+        return null;
+    }
+
+    /**
+     * Method to start spider
+     * FIXME
+     * @param <T2>
+     * @return
+     */
+    @Override
+    public <T1,T2> Result<T2> start(){
+        CrawlerAction<T1,T2> crawlerAction = startConfiger.getCrawlerAction();
+        if(this.startConfiger.getUrls() != null
+                && this.startConfiger.getUrls().length > 0){
+            List<T2> list = bundle(this.startConfiger.getUrls(),crawlerAction);
+            return new Result<>(list,this.crawlMes);
+        }else{
+            T2 obj = serial(this.startConfiger.getUrl(),crawlerAction);
+            return new Result<>(obj,this.crawlMes);
+        }
+
+    }
+
+    @Override
+    public <T1, T2> Result<T2> start(BlockingQueue<T2> blockingQueue) {
+        this.startConfiger.setBlockingQueue(blockingQueue);
+        CrawlerAction<T1,T2> crawlerAction = startConfiger.getCrawlerAction();
+        if(this.startConfiger.getUrls() != null
+                && this.startConfiger.getUrls().length > 0){
+            bundle(this.startConfiger.getUrls(),crawlerAction);
+        }else{
+            async(this.startConfiger.getUrl(),crawlerAction);
+        }
+        return null;
+    }
+
+
 }

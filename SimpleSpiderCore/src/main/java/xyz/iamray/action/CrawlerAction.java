@@ -3,12 +3,14 @@ package xyz.iamray.action;
 
 import xyz.iamray.repo.CrawlMes;
 
+import java.util.Map;
 import java.util.Properties;
 
 /**
  *
  * @param <T1> A parameter of method {@code crawl()}
  * @param <T2> Result type of the mathod {@code crawl()}
+ * 此类线程不安全
  */
 public interface CrawlerAction<T1,T2> {
 
@@ -29,9 +31,14 @@ public interface CrawlerAction<T1,T2> {
      * @param <T>
      * @return
      */
+    @Deprecated
     <T>T getAttr(String key, Class<T> clazz);
 
+    <T> T getAttribute(String key, Class<T> clazz);
+
+    @Deprecated
     void setProperty(Properties property);
 
-    //void put(Class clazz,CrawlerAction crawlerAction);
+    void setProperty(Map<String,Object> property);
+
 }
