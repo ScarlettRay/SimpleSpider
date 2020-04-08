@@ -181,6 +181,10 @@ public abstract class AbstractSpider extends SpiderProperty implements Spider{
         return setStarterConfiger(url,null, crawlerAction,null);
     }
 
+    public AbstractSpider setStarterConfiger(String url,CrawlerAction crawlerAction,CloseableHttpClient httpClient){
+        return setStarterConfiger(url,null, crawlerAction,httpClient);
+    }
+
     /**
      * post请求
      * @param url
