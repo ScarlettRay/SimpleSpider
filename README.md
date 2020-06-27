@@ -24,38 +24,46 @@ SimpleSpider.make()
 这段代码的功能介绍参见下面的SimpleSpider的API
 至此爬虫就开始工作了！！
 ### 【API】
-> CrawlerAction<T>  接口
+> #### CrawlerAction<T>  
 
-定义抓取动作的，一般用户直接继承他的子类即可，根据链接获取的数据类型，继承不同的Action类，框架内置了三种类型，JSON数据继承AbstractJsonCrawlerAction类，重写JSONCrawl()；
-Document这类的文档继承AbstractDocumentCrawlerAction,重写DocumentCrawl(), 图片这类的文件继承AbstractByteCrawlerAction，重写FileCrawl();
-泛型T定义为重写方法的返回类型;
+定义抓取动作的，一般用户直接继承他的子类即可，根据链接获取的资源的数据类型，继承不同的Action类，框架内置了四种资源的Action抽象类:  
+AbstractByteCrawlerAction类用于抓取二进制资源，比如图片；  
+AbstractCrawlerAction类用于抓取标签文档，如html页面；
+AbstractJsonCrawlerAction抓取JSON数据；  
+AbstractJsonObjectCrawlerAction抓取JsonObject数据；  
+AbstractStringCrawlerAction抓取String数据；
+支持用户自定义资源，实现Parser类，在ParserMap里面注册。
+
+泛型T为重写方法的返回类型;
 </br>
-> #### SimpleSpider </br>
+> #### AbstractSpider </br>
 SimpleSpider类对象中设置了一个线程池，线程数为3，所以用户进行小量的爬取时，可以不设置自定义的ThreadPool,内置的线程池不能满足时，用户可以自定义
 
 
-* make():创建一个SimpleSpider对象；
+* setRequestHeader(Map map):设置请求头，可以自定义，需要一个Map对象，SpiderConstant提供了两个Header，一个是伪装成Chrome的，还有一个是暴露为Spider的头部；
 
-* setHeader(Map map):设置请求头，可以自定义，需要一个Map对象，SpiderConstant提供了两个Header，一个是伪装成Chrome的，还有一个是暴露为Spider的头部；
+* setStartConfiger():此方法有多个重载方法，这些参数共同组装一个爬虫的启动配置项StartConfiger。
+url和urls,爬去的url和一组urls;  
+crawlerAction,抓取的动作；  
+httpClient，维持一段会话；
+postBody，post请求传入postBody参数；
 
-* crawlURL(String url,ClosedHTTPClient httpClient):设置爬取得URL和HTTPClient对象，如果需要维持一段会话的爬取，就需要公用一个HTTPClient对象，
 
-所以这里留一个设置HTTPClient的接口，如果不需要维持一段会话，这里可以设置成null，程序会为爬虫分配一个HTTPClient；
+* setProperty(String key,Object value):设置爬虫上下文参数，用来和Action进行信息传递，不要使用setProperty(Properties property)
 
-* crawlURLS(String[] urls,CloseableHttpClient httpClient):设置一组URL
+* setRetryTime(Integer retryTime):失败重试次数；  
 
-* setProperty(Property property):设置Property 对象，用来和Action进行信息传递
+* setConnectTimeout(Integer connectTimeout): 链接超时的时长；  
 
-* setRequestConfig(Integer retryTime,Integer connectTimeout): retryTime:失败重试次数；connectTimeout: 链接超时的时长
+* customThreadPool(ExecutorService cumstomizeExecutorService,boolean useCustomThreadPool):传入自定义的线程池，后面一个参数表示是否在抓取中使用者线程池；
+* setListenHttpStatus(int httpStatus):设置期待返回结果的状态码，默认是200；
 
-* myInitThreadPool(Integer coreNum,Integer maxNum,Long KeepAliveTime):coreNum:核心线程数；maxNum:最大线程数；KeepAliveTime: 当前线程数超出核心线程数时，多余线程的最大存活时间
+* start():启动爬虫。他还有一个异步爬取的重载方法start(BlockingQueue<T2> blockingQueue)，这个方法需要传入阻塞队列用于存放爬取结果，异步抓取返回结果为null,不需要接收。
 
-* async(BlockingQueue queue):让爬虫异步执行，需要传入blockingqueue对象接收返回结果
+> #### AbstractSpider的两个继承类SimpleSpider和PostSpider  
 
-* crawl(CrawlerAction action):执行爬取，同步时返回结果
-
-* crawlBundle(CrawlerAction action):多个URL时的批量爬取，返回结果的List对象
-
+* SimpleSpider用于执行Get请求
+* PostSpider用于执行Post请求
 ### LICENSE
 * * * * * 
 [Apache 2.0](https://github.com/ScarlettRay/SimpleSpider/blob/master/LICENSE)
